@@ -22,7 +22,6 @@ const walk = {
     "5":'/images/walk/5.png',
     "6":'/images/walk/6.png',
 }
-character.style.backgroundImage = `url(${idle[4]})`
 
 // character functions
 function idleTime(){
@@ -33,8 +32,9 @@ function idleTime(){
     }, 200);
     setTimeout(() => {
         character.style.backgroundImage = `url(${idle[3]})`
+        character.style.backgroundPosition = 'bottom'
     }, 400);
-    setTimeout(() => {
+    setTimeout(() => {z
         character.style.backgroundImage = `url(${idle[4]})`
     }, 600);
     setTimeout(() => {
@@ -43,14 +43,14 @@ function idleTime(){
 }
 
 function walkTime() {
-    
+    character.style.transform = 'rotateY(180deg)'
 }
 
 let characterTime = setInterval(function () {
     if (characterStatus=='idle'&&statusTurn==false) {
         return idleTime()
     }
-    if (characterStatus=='walk') {
+    if (characterStatus=='walk'&&statusTurn==false) {
         return walkTime()
     }
     

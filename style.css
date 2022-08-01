@@ -29,8 +29,8 @@ body{
     height: 30%;
     bottom: 20%;
     position: absolute;
-    background-size: contain;
-    background-position: bottom;
+    background-size: 100%;
+    background-position: center;
     background-repeat: no-repeat;
     background-image: url('images/idle/1.png');
 }
@@ -82,3 +82,4 @@ body{
   top: -3%;
   border-radius: 99px;
   }
+
