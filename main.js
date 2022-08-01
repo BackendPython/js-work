@@ -70,6 +70,17 @@ function walkTime() {
     }, 1000);
 }
 
+function fireTime() {
+    character.style.backgroundImage = `url(${fire[1]})`
+    setTimeout(() => {
+        character.style.backgroundImage = `url(${fire[2]})`
+    }, 200);
+    setTimeout(() => {
+        statusTurn = false
+        characterStatus = 'idle'
+        character.style.backgroundImage = `url(${fire[3]})`
+    }, 400);
+}
 
 let characterTime = setInterval(function () {
     let character_left = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
@@ -78,14 +89,19 @@ let characterTime = setInterval(function () {
     // checking idle
     if (characterStatus=='idle'&&statusTurn==false) {
         statusTurn = true
+
         return idleTime()
     }
-    if (characterStatus=='walk'&&statusTurn==false) {
+    else if (characterStatus=='walk'&&statusTurn==false) {
         statusTurn = true
         return walkTime()
     }
+    else if (characterStatus=='fire'&&statusTurn==false) {
+        statusTurn = true
+        return fireTime()
+    }
     zaxiraText.textContent = `left: ${character_left}    right: ${character_right}    body: ${bodyWidth}`
-}, 10)
+}, 200)
 
 window.addEventListener('keyup', function(event){
     switch (event.key) {
@@ -97,8 +113,8 @@ window.addEventListener('keyup', function(event){
             characterStatus = 'walk'
             character.style.transform = 'rotateY(0deg)'
             break;
-        // case 'ArrowTop':
-        //     characterStatus
+        case ' ':
+            characterStatus = 'fire'
         default:
             break;
     }
