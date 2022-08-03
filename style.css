@@ -83,4 +83,49 @@ body{
   border-radius: 99px;
   }
 
+@keyframes idle {
+   0%{
+     background-image: url('/images/idle/idle-1.png');
+   }
+   50%{
+    background-image: url('/images/idle/idle-2.png');
+   }
+   100%{
+    background-image: url('/images/idle/idle-4.png')
+   }
+}
+
+@keyframes walk {
+  0%{
+    background-image: url('/images/walk/walk-1.png');
+  }
+  20%{
+    background-image: url('/images/walk/walk-2.png');
+  }
+  40%{
+    background-image: url('/images/walk/walk-3.png');
+  }
+  60%{
+    background-image: url('/images/walk/walk-4.png');
+  }
+  80%{
+    background-image: url('/images/walk/walk-5.png');
+  }
+  100%{
+    background-image: url('/images/walk/walk-6.png');
+  }
+}
+
+@keyframes attack {
+  0%{
+    background-image: url('/images/fire/attack-1.png');
+  }
+  50%{
+    background-image: url('/images/fire/attack-2.png');
+  }
+  100%{
+    background-image: url('/images/fire/attack-3.png');
+  }
+}
+
 

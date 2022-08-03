@@ -32,50 +32,26 @@ const walk = {
 
 // character functions
 function idleTime(){
-    character.style.backgroundImage = `url(${idle[1]})`
-    setTimeout(() => {
-        character.style.backgroundImage = `url(${idle[2]})`
-    }, 200);
-    setTimeout(() => {
-        character.style.backgroundImage = `url(${idle[4]})`
-    }, 400);
+    character.style.animation = 'idle 1s infinite'
     setTimeout(() => {
         statusTurn = false
-        characterStatus = 'idle'
-    }, 600);
-}
-
-function walkTime() {
-    character.style.backgroundImage = `url(${walk[1]})`
-    setTimeout(() => {
-        character.style.backgroundImage = `url(${walk[2]})`
-    }, 200);
-    setTimeout(() => {
-        character.style.backgroundImage = `url(${walk[3]})`
-    }, 400);
-    setTimeout(() => {
-        character.style.backgroundImage = `url(${walk[4]})`
-    }, 600);
-    setTimeout(() => {
-        character.style.backgroundImage = `url(${walk[5]})`
-    }, 800);
-    setTimeout(() => {
-        statusTurn = false
-        characterStatus = 'idle'
-        character.style.backgroundImage = `url(${walk[6]})`
+        character.style.animation = 'idle 1s infinite'
     }, 1000);
 }
 
-function attackTime() {
-    character.style.backgroundImage = `url(${fire[1]})`
-    setTimeout(() => {
-        character.style.backgroundImage = `url(${fire[2]})`
-    }, 200);
+function walkTime(){
+    character.style.animation = 'walk 1s infinite'
     setTimeout(() => {
         statusTurn = false
-        characterStatus = 'idle'
-        character.style.backgroundImage = `url(${fire[3]})`
-    }, 400);
+        character.style.animation = 'idle 1s infinite'
+    }, 1000);
+}
+function attackTime(){
+    character.style.animation = 'attack 1s infinite'
+    setTimeout(() => {
+        statusTurn = false
+        character.style.animation = 'idle 1s infinite'
+    }, 1000);
 }
 
 let ckeckedStatus = setInterval(() => {
@@ -86,9 +62,29 @@ let ckeckedStatus = setInterval(() => {
     if (characterStatus==='walk'&&statusTurn===false) {
         statusTurn = true
         walkTime()
+        setTimeout(() => {
+            character.style.animation = 'idle 1s infinite'
+        }, 1000);
     }
     if (characterStatus==='attack'&&statusTurn===false) {
         statusTurn = true
         attackTime()
+        setTimeout(() => {
+            character.style.animation = 'idle 1s infinite'
+        }, 1000);
     }
 }, 10);
+
+window.addEventListener('keydown', function(event){
+    switch (event.key) {
+        case "ArrowLeft":
+            character.style.transform = 'rotateY(180deg)'
+            break;
+        case "ArrowRight":
+            characterStatus = 'walk'
+            character.style.transform = 'rotateY(0deg)'
+            break;
+        default:
+            break;
+    }
+})
