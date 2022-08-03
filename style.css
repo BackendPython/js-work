@@ -26,12 +26,13 @@ body{
 .character{
     left: 2%;
     width: 10%;
-    height: 30%;
-    bottom: 18%;
+    height: 20%;
+    bottom: 20%;
     position: absolute;
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url('/images/idle/idle-1.png');
 }
 
 

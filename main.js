@@ -13,7 +13,7 @@ let characterPostion = {
 const idle = {
     "1":'/images/idle/idle-1.png',
     "2":'/images/idle/idle-2.png',
-    "3":'/images/idle/idle-3.png',
+    // "3":'/images/idle/idle-3.png',
     "4":'/images/idle/idle-4.png',
 }
 const fire = {
@@ -32,21 +32,17 @@ const walk = {
 
 // character functions
 function idleTime(){
-    statusTurn = true
     character.style.backgroundImage = `url(${idle[1]})`
     setTimeout(() => {
         character.style.backgroundImage = `url(${idle[2]})`
     }, 200);
     setTimeout(() => {
-        character.style.backgroundImage = `url(${idle[3]})`
-    }, 400);
-    setTimeout(() => {
         character.style.backgroundImage = `url(${idle[4]})`
-    }, 600);
+    }, 400);
     setTimeout(() => {
         statusTurn = false
         characterStatus = 'idle'
-    }, 800);
+    }, 600);
 }
 
 function walkTime() {
@@ -70,7 +66,7 @@ function walkTime() {
     }, 1000);
 }
 
-function fireTime() {
+function attackTime() {
     character.style.backgroundImage = `url(${fire[1]})`
     setTimeout(() => {
         character.style.backgroundImage = `url(${fire[2]})`
@@ -81,3 +77,18 @@ function fireTime() {
         character.style.backgroundImage = `url(${fire[3]})`
     }, 400);
 }
+
+let ckeckedStatus = setInterval(() => {
+    if (characterStatus==='idle'&&statusTurn===false) {
+        statusTurn = true
+        idleTime()
+    }
+    if (characterStatus==='walk'&&statusTurn===false) {
+        statusTurn = true
+        walkTime()
+    }
+    if (characterStatus==='attack'&&statusTurn===false) {
+        statusTurn = true
+        attackTime()
+    }
+}, 10);
