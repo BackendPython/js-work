@@ -11,23 +11,23 @@ let characterPostion = {
     'check_left': bodyWidth / 10,
 }
 const idle = {
-    "1":'/images/idle/1.png',
-    "2":'/images/idle/2.png',
-    "3":'/images/idle/3.png',
-    "4":'/images/idle/4.png',
+    "1":'/images/idle/idle-1.png',
+    "2":'/images/idle/idle-2.png',
+    "3":'/images/idle/idle-3.png',
+    "4":'/images/idle/idle-4.png',
 }
 const fire = {
-    "1":'/images/fire/1.png',
-    "2":'/images/fire/2.png',
-    "3":'/images/fire/3.png',
+    "1":'/images/fire/attck-1.png',
+    "2":'/images/fire/attck-2.png',
+    "3":'/images/fire/attck-3.png',
 }
 const walk = {
-    "1":'/images/walk/1.png',
-    "2":'/images/walk/2.png',
-    "3":'/images/walk/3.png',
-    "4":'/images/walk/4.png',
-    "5":'/images/walk/5.png',
-    "6":'/images/walk/6.png',
+    "1":'/images/walk/walk-1.png',
+    "2":'/images/walk/walk-2.png',
+    "3":'/images/walk/walk-3.png',
+    "4":'/images/walk/walk-4.png',
+    "5":'/images/walk/walk-5.png',
+    "6":'/images/walk/walk-6.png',
 }
 
 // character functions
@@ -81,41 +81,3 @@ function fireTime() {
         character.style.backgroundImage = `url(${fire[3]})`
     }, 400);
 }
-
-let characterTime = setInterval(function () {
-    let character_left = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
-    let character_right = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
-    character.style.left = `${characterPostion.check_left}px`
-    // checking idle
-    if (characterStatus=='idle'&&statusTurn==false) {
-        statusTurn = true
-
-        return idleTime()
-    }
-    else if (characterStatus=='walk'&&statusTurn==false) {
-        statusTurn = true
-        return walkTime()
-    }
-    else if (characterStatus=='fire'&&statusTurn==false) {
-        statusTurn = true
-        return fireTime()
-    }
-    zaxiraText.textContent = `left: ${character_left}    right: ${character_right}    body: ${bodyWidth}`
-}, 200)
-
-window.addEventListener('keyup', function(event){
-    switch (event.key) {
-        case 'ArrowLeft':
-            characterStatus = 'walk'
-            character.style.transform = 'rotateY(180deg)'
-            break;
-        case 'ArrowRight':
-            characterStatus = 'walk'
-            character.style.transform = 'rotateY(0deg)'
-            break;
-        case ' ':
-            characterStatus = 'fire'
-        default:
-            break;
-    }
-})
