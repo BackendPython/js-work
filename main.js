@@ -5,7 +5,7 @@ let characterStatus = 'idle'
 let statusTurn = false
 let backTime = 200
 
-
+let characterDeat
 
 
 let check = setInterval(() => {
@@ -21,12 +21,12 @@ let check = setInterval(() => {
         }, 1001);
     }
     if (characterStatus=='attack') {
-        character.style.animation = 'attack 1s ease infinite'
+        character.style.animation = 'attack 0.5s ease infinite'
         setTimeout(() => {
             if (characterStatus=='attack') {
                 characterStatus = 'idle'
             }
-        }, 1001);
+        }, 501);
     }
 });
 
