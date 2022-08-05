@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Carter+One');
-
 *{
     margin: 0;
     padding: 0;
@@ -34,8 +33,6 @@ body{
     background-repeat: no-repeat;
     background-image: url('/images/idle/idle-1.png');
 }
-
-
 .game-button {
   top: 0;
   display: none;
@@ -71,7 +68,7 @@ body{
   right: 13%;
   top: -3%;
   border-radius: 99px;
-  }
+}
 .game-button::after {
   content: '';
   height: 10%;
@@ -81,7 +78,8 @@ body{
   right: 5%;
   top: -3%;
   border-radius: 99px;
-  }
+}
+
 
 @keyframes idle {
    0%{
