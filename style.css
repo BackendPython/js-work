@@ -26,10 +26,11 @@ body{
     left: 2%;
     width: 10%;
     height: 20%;
-    bottom: 20%;
+    bottom: 0%;
     position: absolute;
     transition: 1s ease;
     background-size: 100%;
+    border: 1px solid black;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('/images/idle/idle-1.png');
