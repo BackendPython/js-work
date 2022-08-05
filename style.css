@@ -27,6 +27,7 @@ body{
     width: 10%;
     height: 20%;
     bottom: 20%;
+    transition: 1s;
     position: absolute;
     background-size: 100%;
     background-position: center;
@@ -89,7 +90,7 @@ body{
     background-image: url('/images/idle/idle-2.png');
    }
    100%{
-    background-image: url('/images/idle/idle-4.png')
+    background-image: url('/images/idle/idle-3.png')
    }
 }
 
