@@ -27,8 +27,8 @@ body{
     width: 10%;
     height: 20%;
     bottom: 20%;
-    transition: 1s;
     position: absolute;
+    transition: 1s ease;
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -83,14 +83,17 @@ body{
 
 
 @keyframes idle {
-   0%{
+   25%{
      background-image: url('/images/idle/idle-1.png');
    }
    50%{
     background-image: url('/images/idle/idle-2.png');
    }
+   75%{
+    background-image: url('/images/idle/idle-3.png');
+   }
    100%{
-    background-image: url('/images/idle/idle-3.png')
+    background-image: url('/images/idle/idle-4.png');
    }
 }
 
@@ -116,14 +119,17 @@ body{
 }
 
 @keyframes attack {
-  0%{
-    background-image: url('/images/fire/attack-1.png');
+  25%{
+    background-image: url('/images/attack/attack-1.png');
   }
   50%{
-    background-image: url('/images/fire/attack-2.png');
+    background-image: url('/images/attack/attack-2.png');
+  }
+  75%{
+    background-image: url('/images/attack/attack-3.png');
   }
   100%{
-    background-image: url('/images/fire/attack-3.png');
+    background-image: url('/images/attack/attack-4.png');
   }
 }
 
