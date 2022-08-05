@@ -5,7 +5,6 @@ let characterStatus = 'idle'
 let statusTurn = false
 let backTime = 200
 
-let characterDeat
 
 
 let check = setInterval(() => {
