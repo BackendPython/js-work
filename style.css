@@ -89,8 +89,8 @@ body{
   bottom: 1.2%;
   position: absolute;
   transition: 1s ease;
-  /* background-size: 100%;
-  border: 1px solid black; */
+  background-size: 100%;
+  /* border: 1px solid black; */
   transform: rotateY(180deg);
   background-position: center;
   background-repeat: no-repeat;
@@ -165,7 +165,7 @@ body{
   }
 }
 
-@keyframes walk {
+@keyframes walk2 {
   0%{
     background-image: url('/images/walk/walk-1.png');
   }
@@ -186,7 +186,7 @@ body{
   }
 }
 
-@keyframes attack {
+@keyframes attack2 {
   25%{
     background-image: url('/images/attack/attack-1.png');
   }

@@ -3,7 +3,7 @@ let zaxiraText = document.querySelector('.text')
 const fullBox = document.querySelector('.full')
 let rival = document.querySelectorAll('.rival')
 let characterStatus = 'idle'
-let rivalStatus = 'idle'
+let rivalStatus = 'idle2'
 let statusTurn = false
 
 
@@ -60,50 +60,54 @@ window.addEventListener('keyup', function(event){
 
 // rivalStatus checking
 let check2 = setInterval(() => {
-    if (rivalStatus=='idle2') {
-        rival.style.animation = 'idle2 1s ease infinite'
-    }
-    if (rivalStatus=='walk2') {
-        rival.style.animation = 'walk2 1s ease infinite'
-        setTimeout(() => {
-            if (rivalStatus=='walk2') {
-                rivalStatus = 'idle2'
-            }
-        }, 1001);
-    }
-    if (rivalStatus=='attack2') {
-        rival.style.animation = 'attack2 0.5s ease infinite'
-        setTimeout(() => {
-            if (rivalStatus=='attack2') {
-                rivalStatus = 'idle2'
-            }
-        }, 501);
-    }
+    rival.forEach(function(rival){
+        if (rivalStatus=='idle2') {
+            rival.style.animation = 'idle2 1s infinite'
+        }
+        if (rivalStatus=='walk2') {
+            rival.style.animation = 'walk2 1s infinite'
+            setTimeout(() => {
+                if (rivalStatus=='walk2') {
+                    rivalStatus = 'idle2'
+                }
+            }, 1001);
+        }
+        if (rivalStatus=='attack2') {
+            rival.style.animation = 'attack2 0.5s infinite'
+            setTimeout(() => {
+                if (rivalStatus=='attack2') {
+                    rivalStatus = 'idle2'
+                }
+            }, 501);
+        }
+    })
 });
 
 // rival controller keyup
 window.addEventListener('keyup', function(event){
-    let rivalLeft = parseInt(window.getComputedStyle(rival).getPropertyValue('left'))
-    let rivalRight = parseInt(window.getComputedStyle(rival).getPropertyValue('right'))
-    switch (event.key) {
-        case "ArrowLeft":
-            rivalStatus = 'walk'
-            if (rivalLeft>100) {
-                rival.style.left = characterLeft - 100 + 'px'
-            }
-            rival.style.transform = 'rotateY(0deg)'
-            break;
-        case "ArrowRight":
-            characterStatus = 'walk'
-            if (rivalRight>100) {
-                rival.style.left = characterLeft + 100 + 'px'
-            }
-            rival.style.transform = 'rotateY(1800deg)'
-            break;
-        case "ArrowDown":
-            rivalStatus = 'attack'
-            break;
-        default:
-            break;
-    }
+    rival.forEach(function(rival){
+        let rivalLeft = parseInt(window.getComputedStyle(rival).getPropertyValue('left'))
+        let rivalRight = parseInt(window.getComputedStyle(rival).getPropertyValue('right'))
+        switch (event.key) {
+            case "ArrowLeft":
+                rivalStatus = 'walk'
+                if (rivalLeft>100) {
+                    rival.style.left = characterLeft - 100 + 'px'
+                }
+                rival.style.transform = 'rotateY(0deg)'
+                break;
+            case "ArrowRight":
+                characterStatus = 'walk'
+                if (rivalRight>100) {
+                    rival.style.left = characterLeft + 100 + 'px'
+                }
+                rival.style.transform = 'rotateY(1800deg)'
+                break;
+            case "ArrowDown":
+                rivalStatus = 'attack'
+                break;
+            default:
+                break;
+        }
+    })
 })
