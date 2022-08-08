@@ -30,7 +30,7 @@ body{
     position: absolute;
     transition: 1s ease;
     background-size: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('/images/idle/idle-1.png');
