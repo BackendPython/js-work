@@ -167,22 +167,22 @@ body{
 
 @keyframes walk2 {
   0%{
-    background-image: url('/images/walk/walk-1.png');
+    background-image: url('/images/rival/walk/walk-1.png');
   }
   20%{
-    background-image: url('/images/walk/walk-2.png');
+    background-image: url('/images/rival/walk/walk-2.png');
   }
   40%{
-    background-image: url('/images/walk/walk-3.png');
+    background-image: url('/images/rival/walk/walk-3.png');
   }
   60%{
-    background-image: url('/images/walk/walk-4.png');
+    background-image: url('/images/rival/walk/walk-4.png');
   }
   80%{
-    background-image: url('/images/walk/walk-5.png');
+    background-image: url('/images/rival/walk/walk-5.png');
   }
   100%{
-    background-image: url('/images/walk/walk-6.png');
+    background-image: url('/images/rival/walk/walk-6.png');
   }
 }
 

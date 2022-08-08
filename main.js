@@ -92,16 +92,16 @@ window.addEventListener('keyup', function(event){
             case "ArrowLeft":
                 rivalStatus = 'walk'
                 if (rivalLeft>100) {
-                    rival.style.left = characterLeft - 100 + 'px'
+                    rival.style.left = rivalLeft - 100 + 'px'
                 }
-                rival.style.transform = 'rotateY(0deg)'
+                rival.style.transform = 'rotateY(180deg)'
                 break;
             case "ArrowRight":
-                characterStatus = 'walk'
+                rivalStatus = 'walk'
                 if (rivalRight>100) {
-                    rival.style.left = characterLeft + 100 + 'px'
+                    rival.style.left = rivalRight + 100 + 'px'
                 }
-                rival.style.transform = 'rotateY(1800deg)'
+                rival.style.transform = 'rotateY(0deg)'
                 break;
             case "ArrowDown":
                 rivalStatus = 'attack'
