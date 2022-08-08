@@ -134,4 +134,19 @@ body{
   }
 }
 
+@keyframes idle2 {
+  25%{
+    background-image: url('');
+  }
+  50%{
+   background-image: url('2-sprites/idle/idle-1.jpg');
+  }
+  75%{
+   background-image: url('2-sprites/idle/idle-3.jpg');
+  }
+  100%{
+   background-image: url('2-sprites/idle/idle-1.jpg');
+  }
+}
+
 

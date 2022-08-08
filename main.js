@@ -3,10 +3,10 @@ let zaxiraText = document.querySelector('.text')
 const fullBox = document.querySelector('.full')
 let characterStatus = 'idle'
 let statusTurn = false
-let backTime = 200
 
 
 
+// characterStatus checking
 let check = setInterval(() => {
     if (characterStatus=='idle') {
         character.style.animation = 'idle 1s ease infinite'
@@ -29,6 +29,7 @@ let check = setInterval(() => {
     }
 });
 
+// character controller keyup
 window.addEventListener('keyup', function(event){
     let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
     let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
