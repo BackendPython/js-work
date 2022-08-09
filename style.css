@@ -6,9 +6,10 @@
 }
 body{
     display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
 }
 .full{
     width: 100%;
