@@ -85,24 +85,23 @@ let check2 = setInterval(() => {
 
 // rival controller keyup
 window.addEventListener('keyup', function(event){
-    rival.forEach(function(rival){
-        let rivalLeft = parseInt(window.getComputedStyle(rival).getPropertyValue('left'))
-        let rivalRight = parseInt(window.getComputedStyle(rival).getPropertyValue('right'))
-        console.log(rival.lastChild);
+    rival.forEach(function(rival2){
+        let rivalLeft = parseInt(window.getComputedStyle(rival2).getPropertyValue('left'))
+        let rivalRight = parseInt(window.getComputedStyle(rival2).getPropertyValue('right'))
         switch (event.key) {
             case "ArrowLeft":
                 rivalStatus = 'walk2'
                 if (rivalLeft>100) {
-                    rival.style.left = rivalLeft - 100 + 'px'
+                    rival2.style.left = rivalLeft - 100 + 'px'
                 }
-                rival.style.transform = 'rotateY(180deg)'
+                rival2.style.transform = 'rotateY(180deg)'
                 break;
             case "ArrowRight":
                 rivalStatus = 'walk2'
                 if (rivalRight>100) {
-                    rival.style.left = rivalLeft + 100 + 'px'
+                    rival2.style.right = rivalRight + 100 + 'px'
                 }
-                rival.style.transform = 'rotateY(0deg)'
+                rival2.style.transform = 'rotateY(0deg)'
                 break;
             case "ArrowDown":
                 rivalStatus = 'attack2'
