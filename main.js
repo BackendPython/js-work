@@ -88,6 +88,7 @@ window.addEventListener('keyup', function(event){
     rival.forEach(function(rival){
         let rivalLeft = parseInt(window.getComputedStyle(rival).getPropertyValue('left'))
         let rivalRight = parseInt(window.getComputedStyle(rival).getPropertyValue('right'))
+        console.log(rival.lastChild);
         switch (event.key) {
             case "ArrowLeft":
                 rivalStatus = 'walk2'
@@ -98,7 +99,9 @@ window.addEventListener('keyup', function(event){
                 break;
             case "ArrowRight":
                 rivalStatus = 'walk2'
+                if (rivalRight>100) {
                     rival.style.left = rivalLeft + 100 + 'px'
+                }
                 rival.style.transform = 'rotateY(0deg)'
                 break;
             case "ArrowDown":
