@@ -10,6 +10,13 @@ body{
     overflow-x: hidden;
     align-items: center;
     justify-content: center;
+    background-color: royalblue;
+}
+.loading{
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .full{
     width: 100%;
