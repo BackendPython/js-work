@@ -5,6 +5,7 @@ let rival = document.querySelectorAll('.rival')
 let characterStatus = 'idle'
 let rivalStatus = 'idle2'
 let statusTurn = false
+let gameStart = false
 
 
 
@@ -33,28 +34,30 @@ let check = setInterval(() => {
 
 // character controller keyup
 window.addEventListener('keyup', function(event){
-    let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
-    let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
-    switch (event.key) {
-        case "a":
-            characterStatus = 'walk'
-            if (characterLeft>100) {
-                character.style.left = characterLeft - 100 + 'px'
-            }
-            character.style.transform = 'rotateY(180deg)'
-            break;
-        case "d":
-            characterStatus = 'walk'
-            if (characterRight>100) {
-                character.style.left = characterLeft + 100 + 'px'
-            }
-            character.style.transform = 'rotateY(0deg)'
-            break;
-        case " ":
-            characterStatus = 'attack'
-            break;
-        default:
-            break;
+    if (gameStart==true) {
+        let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
+        let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
+        switch (event.key) {
+            case "a":
+                characterStatus = 'walk'
+                if (characterLeft>100) {
+                    character.style.left = characterLeft - 100 + 'px'
+                }
+                character.style.transform = 'rotateY(180deg)'
+                break;
+            case "d":
+                characterStatus = 'walk'
+                if (characterRight>100) {
+                    character.style.left = characterLeft + 100 + 'px'
+                }
+                character.style.transform = 'rotateY(0deg)'
+                break;
+            case " ":
+                characterStatus = 'attack'
+                break;
+            default:
+                break;
+        }
     }
 })
 
@@ -85,29 +88,31 @@ let check2 = setInterval(() => {
 
 // rival controller keyup
 window.addEventListener('keyup', function(event){
-    rival.forEach(function(rival2){
-        let rivalLeft = parseInt(window.getComputedStyle(rival2).getPropertyValue('left'))
-        let rivalRight = parseInt(window.getComputedStyle(rival2).getPropertyValue('right'))
-        switch (event.key) {
-            case "ArrowLeft":
-                rivalStatus = 'walk2'
-                if (rivalLeft>100) {
-                    rival2.style.left = rivalLeft - 100 + 'px'
-                }
-                rival2.style.transform = 'rotateY(180deg)'
-                break;
-            case "ArrowRight":
-                rivalStatus = 'walk2'
-                if (rivalRight<100) {
-                    rival2.style.left = rivalLeft + 100 + 'px'
-                }
-                rival2.style.transform = 'rotateY(0deg)'
-                break;
-            case "ArrowDown":
-                rivalStatus = 'attack2'
-                break;
-            default:
-                break;
-        }
-    })
+    if (gameStart==true) {
+        rival.forEach(function(rival2){
+            let rivalLeft = parseInt(window.getComputedStyle(rival2).getPropertyValue('left'))
+            let rivalRight = parseInt(window.getComputedStyle(rival2).getPropertyValue('right'))
+            switch (event.key) {
+                case "ArrowLeft":
+                    rivalStatus = 'walk2'
+                    if (rivalLeft>100) {
+                        rival2.style.left = rivalLeft - 100 + 'px'
+                    }
+                    rival2.style.transform = 'rotateY(180deg)'
+                    break;
+                case "ArrowRight":
+                    rivalStatus = 'walk2'
+                    if (rivalRight<100) {
+                        rival2.style.left = rivalLeft + 100 + 'px'
+                    }
+                    rival2.style.transform = 'rotateY(0deg)'
+                    break;
+                case "ArrowDown":
+                    rivalStatus = 'attack2'
+                    break;
+                default:
+                    break;
+            }
+        })
+    }
 })
