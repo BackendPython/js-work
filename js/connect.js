@@ -1,4 +1,5 @@
 const character = document.querySelector('.character')
+let loading = document.querySelector('.loading')
 let zaxiraText = document.querySelector('.text')
 const fullBox = document.querySelector('.full')
 let rival = document.querySelectorAll('.rival')
