@@ -1,0 +1,194 @@
+$f-title:'Roboto', sans-serif;
+$f-body:'Open Sans', sans-serif;
+
+@mixin centre($axis: "both") {
+  position: absolute;
+  @if $axis == "y" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @if $axis == "x" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @if $axis == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-51%, -50%);
+    -moz-transform: translate(-51%, -50%);
+    -ms-transform: translate(-51%, -50%);
+    -o-transform: translate(-51%, -50%);
+    transform: translate(-51%, -50%);
+  }
+}
+@mixin font-size($sizeValue: 1.6, $lineHeight: 2.4) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+  line-height: ($lineHeight * 10) + px;
+}
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@include keyframes(outerRotate1) {
+  0%   {transform:translate(-50%, -50%) rotate(0)}
+  100% {transform:translate(-50%, -50%) rotate(360deg)}
+}
+@include keyframes(outerRotate2) {
+  0%   {transform:translate(-50%, -50%) rotate(0)}
+  100% {transform:translate(-50%, -50%) rotate(-360deg)}
+}
+
+@include keyframes(textColour) {
+  0%   {color:#fff;}
+  100% {color:#3BB2D0;}
+}
+
+
+html{
+  font-size:62.5%;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:$f-body;
+  width:100vw;
+  height:100vh;
+  background:#222;
+}
+
+.e-loadholder{
+  @include centre();
+  width:240px;
+  height:240px;
+  border:5px solid #1B5F70;
+  border-radius:120px;
+  box-sizing:border-box;
+  
+  
+  &:after{
+    @include centre;
+    content:" ";
+    display:block;
+    background:#222;
+    transform-origin:center;
+    z-index:0;
+  }
+  
+  &:after{
+    width:100px;
+    height:200%;
+    @include animation('outerRotate2 30s infinite linear');
+  }
+
+  .m-loader{
+    @include centre();
+    width:200px;
+    height:200px;
+    color:#888;
+    text-align:center;
+    border:5px solid lighten(#1B5F70, 15%);
+    border-radius:100px;
+    box-sizing:border-box;
+    z-index:20;
+    text-transform:uppercase;
+
+    &:after{
+      @include centre;
+      content:" ";
+      display:block;
+      background:#222;
+      transform-origin:center;
+      z-index:-1;
+    }
+
+    &:after{
+      width:100px;
+      height:106%;
+      @include animation('outerRotate1 15s infinite linear');
+    }
+
+    .e-text{
+      @include font-size(1.4, 13);
+      @include centre();
+      @include animation('textColour 1s alternate linear infinite');
+      display:block;
+      width:140px;
+      height:140px;
+      text-align:center;
+      border:5px solid lighten(#1B5F70, 25%);
+      border-radius:70px;
+      box-sizing:border-box;
+      z-index:20;
+
+      &:before, &:after{
+        @include centre;
+        content:" ";
+        display:block;
+        background:#222;
+        transform-origin:center;
+        z-index:-1;
+      }
+
+      &:before{
+        width:110%;
+        height:40px;
+        @include animation('outerRotate2 3.5s infinite linear');
+      }
+      &:after{
+        width:40px;
+        height:110%;
+        @include animation('outerRotate1 8s infinite linear');
+      }
+    }
+  }
+}
+
+#particleCanvas-White{
+  @include centre();
+  width:100%;
+  height:50%;
+  opacity:0.1;
+}
+
+#particleCanvas-Blue{
+  @include centre();
+  width:300px;
+  height:300px;
+}
