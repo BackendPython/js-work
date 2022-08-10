@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Carter+One');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.full{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    justify-content: center;
+    background-color: gray;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('images/background.png');
+}
+.character{
+    left: 2%;
+    width: 10%;
+    height: 20%;
+    bottom: 0%;
+    position: absolute;
+    transition: 1s ease;
+    background-size: 100%;
+    /* border: 1px solid black; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/images/idle/idle-1.png');
+}
+.game-button {
+  top: 0;
+  display: none;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none !important;
+  outline: none !important;
+  font-family: 'Carter One', sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+  text-shadow: 2px 2px 1px #0066a2, -2px 2px 1px #0066a2, 2px -2px 1px #0066a2, -2px -2px 1px #0066a2, 0px 2px 1px #0066a2, 0px -2px 1px #0066a2, 0px 4px 1px #004a87, 2px 4px 1px #004a87, -2px 4px 1px  #004a87;
+  border: none;
+  margin: 15px 15px 30px;
+  background: repeating-linear-gradient( 45deg, #3ebbf7, #3ebbf7 5px, #45b1f4 5px, #45b1f4 10px);
+  border-bottom: 3px solid rgba(16, 91, 146, 0.5);
+  border-top: 3px solid rgba(255,255,255,.3);
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 8px 15px 10px;
+  box-shadow: 0 6px 0 #266b91, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #12517d, 0 12px 0 5px #1a6b9a, 0 15px 0 5px #0c405e, 0 15px 1px 6px rgba(0,0,0,.3);
+}
+.game-button:hover {
+  top:2px;
+  box-shadow: 0 4px 0 #266b91, 0 6px 1px 1px rgba(0,0,0,.3), 0 8px 0 5px #12517d, 0 10px 0 5px #1a6b9a, 0 13px 0 5px #0c405e, 0 13px 1px 6px rgba(0,0,0,.3);
+}
+.game-button::before {
+  content: '';
+  height: 10%;
+  position: absolute;
+  width: 40%;
+  background: #fff;
+  right: 13%;
+  top: -3%;
+  border-radius: 99px;
+}
+.game-button::after {
+  content: '';
+  height: 10%;
+  position: absolute;
+  width: 5%;
+  background: #fff;
+  right: 5%;
+  top: -3%;
+  border-radius: 99px;
+}
+
+.rival{
+  right: 2%;
+  width: 9%;
+  height: 18%;
+  bottom: 1.2%;
+  transition: 1s;
+  position: absolute;
+  transition: 1s ease;
+  background-size: 100%;
+  /* border: 1px solid black; */
+  transform: rotateY(180deg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/images/rival/idle/idle-1.png');
+}
+
+/* characater animation */
+@keyframes idle {
+   25%{
+     background-image: url('/images/idle/idle-1.png');
+   }
+   50%{
+    background-image: url('/images/idle/idle-2.png');
+   }
+   75%{
+    background-image: url('/images/idle/idle-3.png');
+   }
+   100%{
+    background-image: url('/images/idle/idle-4.png');
+   }
+}
+
+@keyframes walk {
+  0%{
+    background-image: url('/images/walk/walk-1.png');
+  }
+  20%{
+    background-image: url('/images/walk/walk-2.png');
+  }
+  40%{
+    background-image: url('/images/walk/walk-3.png');
+  }
+  60%{
+    background-image: url('/images/walk/walk-4.png');
+  }
+  80%{
+    background-image: url('/images/walk/walk-5.png');
+  }
+  100%{
+    background-image: url('/images/walk/walk-6.png');
+  }
+}
+
+@keyframes attack {
+  25%{
+    background-image: url('/images/attack/attack-1.png');
+  }
+  50%{
+    background-image: url('/images/attack/attack-2.png');
+  }
+  75%{
+    background-image: url('/images/attack/attack-3.png');
+  }
+  100%{
+    background-image: url('/images/attack/attack-4.png');
+  }
+}
+
+/* rival animations */
+@keyframes idle2 {
+  25%{
+    background-image: url('images/rival/idle/idle-1.png');
+  }
+  50%{
+   background-image: url('images/rival/idle/idle-2.png');
+  }
+  75%{
+   background-image: url('images/rival/idle/idle-3.png');
+  }
+  100%{
+   background-image: url('images/rival/idle/idle-4.png');
+  }
+}
+
+@keyframes walk2 {
+  0%{
+    background-image: url('/images/rival/walk/walk-1.png');
+  }
+  20%{
+    background-image: url('/images/rival/walk/walk-2.png');
+  }
+  40%{
+    background-image: url('/images/rival/walk/walk-3.png');
+  }
+  60%{
+    background-image: url('/images/rival/walk/walk-4.png');
+  }
+  80%{
+    background-image: url('/images/rival/walk/walk-5.png');
+  }
+  100%{
+    background-image: url('/images/rival/walk/walk-6.png');
+  }
+}
+
+@keyframes attack2 {
+  25%{
+    background-image: url('/images/rival/attack/attack-1.png');
+  }
+  50%{
+    background-image: url('/images/rival/attack/attack-2.png');
+  }
+  75%{
+    background-image: url('/images/rival/attack/attack-3.png');
+  }
+  100%{
+    background-image: url('/images/rival/attack/attack-4.png');
+  }
+}
+
+/* select player page */
+
+.select{
+	width: 330px;
+	height: 330px;
+	background-color: aqua;
+	z-index: 3;
+	border: 1px solid gray;
+	text-align: center;
+	position: relative;
+}
+.select .computer{
+	font-size: 30px;
+	padding: 10px 15px;
+	border-radius: 20px;
+	background-color: transparent;
+	border: 2px dashed blue;
+	box-shadow: -5px 10px black;
+  position: absolute;
+  left: 45px;
+  top: 60px;
+}
+.select .computer:active{
+  box-shadow: none;
+  top: 65px;
+}
+.select .player:active{
+	box-shadow: none;
+	top: 185px;
+}
+.select .player{
+	font-size: 30px;
+	padding: 10px 15px;
+	border-radius: 20px;
+	background-color: transparent;
+	border: 2px dashed  blue;
+	box-shadow: -5px 10px black;
+	position: absolute;
+	left: 0;
+	top: 180px;
+	left: 38px;
+}
+
+
