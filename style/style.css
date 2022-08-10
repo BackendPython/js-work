@@ -153,16 +153,16 @@ body{
 /* rival animations */
 @keyframes idle2 {
   25%{
-    background-image: url('images/rival/idle/idle-1.png');
+    background-image: url('/images/rival/idle/idle-1.png');
   }
   50%{
-   background-image: url('images/rival/idle/idle-2.png');
+   background-image: url('/images/rival/idle/idle-2.png');
   }
   75%{
-   background-image: url('images/rival/idle/idle-3.png');
+   background-image: url('/images/rival/idle/idle-3.png');
   }
   100%{
-   background-image: url('images/rival/idle/idle-4.png');
+   background-image: url('/images/rival/idle/idle-4.png');
   }
 }
 

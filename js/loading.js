@@ -1,4 +1,4 @@
-window.addEventListener('loadedmetadata', function(){
+window.addEventListener('beforeunload', function(){
     loading.style.display = 'flex'
     fullBox.style.display = 'none'
 })
