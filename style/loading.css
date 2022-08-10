@@ -1,4 +1,5 @@
 .wrapper{
+  display: none;
   width:200px;
   height:60px;
   position: absolute;
