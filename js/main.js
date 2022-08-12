@@ -30,6 +30,9 @@ let check = setInterval(() => {
             }
         }, 501);
     }
+    if (gameStart==true) {
+        fullBox.style.backgroundImage = 'url("/images/background.png")'
+    }
 });
 
 // character controller keyup
@@ -43,14 +46,12 @@ window.addEventListener('keyup', function(event){
                 if (characterLeft>100) {
                     character.style.left = characterLeft - 100 + 'px'
                 }
-                character.style.transform = 'rotateY(180deg)'
                 break;
             case "d":
                 characterStatus = 'walk'
                 if (characterRight>100) {
                     character.style.left = characterLeft + 100 + 'px'
                 }
-                character.style.transform = 'rotateY(0deg)'
                 break;
             case " ":
                 characterStatus = 'attack'
@@ -98,14 +99,12 @@ window.addEventListener('keyup', function(event){
                     if (rivalLeft>100) {
                         rival2.style.left = rivalLeft - 100 + 'px'
                     }
-                    rival2.style.transform = 'rotateY(180deg)'
                     break;
                 case "ArrowRight":
                     rivalStatus = 'walk2'
                     if (rivalRight<100) {
                         rival2.style.left = rivalLeft + 100 + 'px'
                     }
-                    rival2.style.transform = 'rotateY(0deg)'
                     break;
                 case "ArrowDown":
                     rivalStatus = 'attack2'

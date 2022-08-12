@@ -27,13 +27,14 @@ body{
     justify-content: center;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/images/background.png');
+    background-image: url('/images/select-background.png');
 }
 .character{
     left: 2%;
     width: 10%;
     height: 20%;
     bottom: 0%;
+    display: none;
     position: absolute;
     transition: 1s ease;
     background-size: 100%;
@@ -94,6 +95,7 @@ body{
   width: 9%;
   height: 18%;
   bottom: 1.2%;
+  display: none;
   transition: 1s;
   position: absolute;
   transition: 1s ease;
@@ -212,44 +214,36 @@ body{
 /* select player page */
 
 .select{
-	width: 330px;
-	height: 330px;
-	background-color: aqua;
-	z-index: 3;
-	border: 1px solid gray;
-	text-align: center;
-	position: relative;
+	display: grid;
 }
 .select .computer{
 	font-size: 30px;
 	padding: 10px 15px;
 	border-radius: 20px;
-	background-color: transparent;
+	background-color: aqua;
 	border: 2px dashed blue;
 	box-shadow: -5px 10px black;
-  position: absolute;
-  left: 45px;
-  top: 60px;
+  margin-top: 60px;
+  margin-left: 50px;
 }
 .select .computer:active{
   box-shadow: none;
-  top: 65px;
+  transform: translateY(10px);
 }
-.select .player:active{
-	box-shadow: none;
-	top: 185px;
-}
-.select .player{
+.select .friend{
 	font-size: 30px;
 	padding: 10px 15px;
 	border-radius: 20px;
-	background-color: transparent;
+	background-color: aqua;
 	border: 2px dashed  blue;
 	box-shadow: -5px 10px black;
-	position: absolute;
-	left: 0;
-	top: 180px;
-	left: 38px;
+  margin-left: 50px;
+  margin-top: 60px;
 }
+.select .friend:active{
+	box-shadow: none;
+	transform: translateY(10px);
+}
+
 
 
