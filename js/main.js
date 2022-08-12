@@ -1,3 +1,28 @@
+const character = document.querySelector('.character')
+let computerBtn = document.querySelector('.computer')
+let selectPage = document.querySelector('.select')
+let friendBtn = document.querySelector('.friend')
+let loading = document.querySelector('.wrapper')
+let zaxiraText = document.querySelector('.text')
+const fullBox = document.querySelector('.full')
+let rival = document.querySelectorAll('.rival')
+let characterStatus = 'idle'
+let rivalStatus = 'idle2'
+let selectPlayer = false
+let statusTurn = false
+let gameStart = false
+
+
+// select Type Fighting
+friendBtn.addEventListener('click', function(){
+    gameStart = true
+    selectPlayer = true
+})
+computerBtn.addEventListener('click', function(){
+    gameStart = true
+    selectPlayer = false
+})
+
 // characterStatus checking
 let check = setInterval(() => {
     if (characterStatus=='idle') {
@@ -20,6 +45,9 @@ let check = setInterval(() => {
         }, 501);
     }
     if (gameStart==true) {
+        rival[0].style.display = 'flex'
+        character.style.display = 'flex'
+        selectPage.style.display = 'none'
         fullBox.style.backgroundImage = 'url("/images/background.png")'
     }
 });
@@ -104,4 +132,3 @@ window.addEventListener('keyup', function(event){
         })
     }
 })
-
