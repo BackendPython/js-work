@@ -10,7 +10,7 @@ let characterStatus = 'idle'
 let rivalStatus = 'idle2'
 let selectPlayer = false
 let statusTurn = false
-let gameStart = true
+let gameStart = false
 
 
 
