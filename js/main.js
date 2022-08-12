@@ -13,6 +13,8 @@ let statusTurn = false
 let gameStart = false
 
 
+
+
 // select Type Fighting
 friendBtn.addEventListener('click', function(){
     gameStart = true
