@@ -1,14 +1,3 @@
-const character = document.querySelector('.character')
-let loading = document.querySelector('.wrapper')
-let zaxiraText = document.querySelector('.text')
-const fullBox = document.querySelector('.full')
-let rival = document.querySelectorAll('.rival')
-let characterStatus = 'idle'
-let rivalStatus = 'idle2'
-let statusTurn = false
-let gameStart = false
-
-
 // characterStatus checking
 let check = setInterval(() => {
     if (characterStatus=='idle') {
@@ -89,7 +78,7 @@ let check2 = setInterval(() => {
 
 // rival controller keyup
 window.addEventListener('keyup', function(event){
-    if (gameStart==true) {
+    if (gameStart==true&&selectPlayer==true) {
         rival.forEach(function(rival2){
             let rivalLeft = parseInt(window.getComputedStyle(rival2).getPropertyValue('left'))
             let rivalRight = parseInt(window.getComputedStyle(rival2).getPropertyValue('right'))
