@@ -1,3 +1,5 @@
+let player_heal_box = document.querySelector('.player-1-heal')
+let rival_heal_box = document.querySelector('.rival-1-heal')
 const character = document.querySelector('.character')
 let computerBtn = document.querySelector('.computer')
 let selectPage = document.querySelector('.select')
@@ -12,6 +14,16 @@ let rivalStatus = 'idle2';
 let selectPlayer = true;
 let gameStart = true;
 
+let player_details = {
+    heal: 100,
+    attack: 10,
+    winner: false,
+}
+let rival_details = {
+    heal: 100,
+    attack: 10,
+    winner: false,
+}
 
 
 
