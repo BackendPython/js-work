@@ -9,7 +9,7 @@ let rival = document.querySelectorAll('.rival')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
 let selectPlayer = true;
-let gameStart = true;
+let gameStart = false;
 
 
 
