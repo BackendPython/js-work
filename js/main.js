@@ -8,8 +8,8 @@ const fullBox = document.querySelector('.full')
 let rival = document.querySelectorAll('.rival')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
-let selectPlayer = null;
-let gameStart = false;
+let selectPlayer = true;
+let gameStart = true;
 
 
 

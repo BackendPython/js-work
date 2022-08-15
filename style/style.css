@@ -43,6 +43,12 @@ body{
     background-repeat: no-repeat;
     background-image: url('/images/idle/idle-1.png');
 }
+.character-heal{
+  width: 50%;
+  height: 5%;
+  position: relative;
+  background-color: red;
+}
 
 .rival{
   right: 2%;
