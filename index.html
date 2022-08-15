@@ -31,41 +31,22 @@
 
         <!----------------------------------------------- battle time html ----------------------------------------------->
         <div class="heals">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-            <section>
-                <div id="player-container">
-                    <div id="container2">
-                        <div id="health">
-                            <i class="fa fa-heart"></i>
-                            <div id="health-text">100</div>
-                            <div id="health-bar">
-                                <div class="level"></div>
-                            </div>
-                        </div>
-                        
-                        <div id="armor" >
-                            <span class="fa-stack fa-lg" >
-                                <i class="fa fa-shield  fa-stack-2x"></i>
-                                <i class="fa fa-plus fa-stack-1x"></i>
-                            </span>
-                            <div id="armor-text">100</div>
-                            <div id="armor-bar">
-                                <div class="level"></div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- player -->
+            <div class="player-1">
+                <h1 class="player-text"><i class="fa-solid fa-heart" style="color: red;"></i> 100</h1>
+                <div class="player-1-heal-box">
+                    <div class="player-1-heal"></div>
                 </div>
-            </section>
-            <div class="color"></div>
-            <div class="wrap">
-                <div id="timer" class="container">
-                    <div class="timelabel">
-                        
-                    </div>
-                    <div class="time">
-                        
-                    </div>
+            </div>
+            <!-- rival -->
+            <div class="rival-1">
+                <div class="rival-1-heal-box">
+                    <div class="rival-1-heal"></div>
                 </div>
+                <h1 class="rival-text">
+                    <i class="fa-solid fa-heart" style="color: red;"></i>
+                    <span class="player-1-heal">100</span>
+                </h1>
             </div>
         </div>
         <div class="text" style="color: wheat; font-size: 2rem;"></div>
