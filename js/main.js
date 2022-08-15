@@ -84,6 +84,10 @@ window.addEventListener('keyup', function(event){
 // rivalStatus checking
 let check2 = setInterval(() => {
     rival.forEach(function(rival){
+        let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
+        let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
+        let rivalLeft = parseInt(window.getComputedStyle(rival).getPropertyValue('left'))
+        let rivalRight = parseInt(window.getComputedStyle(rival).getPropertyValue('right'))
         if (rivalStatus=='idle2') {
             rival.style.animation = 'idle2 1s infinite'
         }
@@ -103,8 +107,16 @@ let check2 = setInterval(() => {
                 }
             }, 501);
         }
+        if (selectPlayer&&gameStart==true) {
+            if (rivalLeft-characterLeft<40&&rivalLeft-characterLeft>-40) {
+                zaxiraText.textContent = 'Attack'
+            }
+            else{
+                zaxiraText.textContent = ''
+            }
+        }
     })
-});
+}, 1);
 
 // rival controller keyup
 window.addEventListener('keyup', function(event){
@@ -126,7 +138,9 @@ window.addEventListener('keyup', function(event){
                     }
                     break;
                 case "ArrowDown":
-                    rivalStatus = 'attack2'
+                    if (rivalStatus=='idle2') {
+                        rivalStatus = 'attack2'
+                    }
                     break;
                 default:
                     break;
