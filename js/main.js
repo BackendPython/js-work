@@ -6,11 +6,10 @@ let loading = document.querySelector('.wrapper')
 let zaxiraText = document.querySelector('.text')
 const fullBox = document.querySelector('.full')
 let rival = document.querySelectorAll('.rival')
-let characterStatus = 'idle'
-let rivalStatus = 'idle2'
-let selectPlayer = false
-let statusTurn = false
-let gameStart = false
+let characterStatus = 'idle';
+let rivalStatus = 'idle2';
+let selectPlayer = null;
+let gameStart = false;
 
 
 
