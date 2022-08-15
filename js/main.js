@@ -10,7 +10,7 @@ let heals = document.querySelector('.heals')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
 let selectPlayer = true;
-let gameStart = false;
+let gameStart = true;
 
 
 
@@ -47,6 +47,7 @@ let check = setInterval(() => {
         }, 501);
     }
     if (gameStart==true) {
+        heals.style.display = 'flex'
         rival[0].style.display = 'flex'
         character.style.display = 'flex'
         selectPage.style.display = 'none'
