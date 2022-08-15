@@ -6,6 +6,7 @@ let loading = document.querySelector('.wrapper')
 let zaxiraText = document.querySelector('.text')
 const fullBox = document.querySelector('.full')
 let rival = document.querySelectorAll('.rival')
+let heals = document.querySelector('.heals')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
 let selectPlayer = true;
