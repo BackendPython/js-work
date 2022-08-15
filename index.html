@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/style/loading.css">
     <link rel="icon" href="/images/icons/pixel war.jpg">
+    <link rel="stylesheet" href="/style/style.css">
     <title>JS work</title>
 </head>
 <body>
@@ -33,7 +32,10 @@
         <div class="heals">
             <!-- player -->
             <div class="player-1">
-                <h1 class="player-text"><i class="fa-solid fa-heart" style="color: red;"></i> 100</h1>
+                <h1 class="player-text">
+                    <i class="fa-solid fa-heart" style="color: red;"></i>
+                    <span class="player-1-heal-text">100</span>
+                </h1>
                 <div class="player-1-heal-box">
                     <div class="player-1-heal"></div>
                 </div>
@@ -44,8 +46,8 @@
                     <div class="rival-1-heal"></div>
                 </div>
                 <h1 class="rival-text">
+                    <span class="rival-1-heal-text">100</span>
                     <i class="fa-solid fa-heart" style="color: red;"></i>
-                    <span class="player-1-heal">100</span>
                 </h1>
             </div>
         </div>
@@ -58,7 +60,6 @@
 
     <!------------------------------------------------ script ------------------------------------------------>
     <script src="/js/main.js"></script>
-    <script src="/js/loading.js"></script>
     <noscript><style>.full{display: none;}</style><h1>Please allow JavaScript for this site</h1></noscript>
 </body>
 </html>
