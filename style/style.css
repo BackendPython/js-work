@@ -48,7 +48,7 @@ body{
   top: 0px;
   width: 100%;
   height: 10%;
-  display: flex;
+  display: none;
   position: absolute;
   align-items: center;
   justify-content: space-between;
@@ -146,7 +146,7 @@ body{
 
 .rotate{
   height: 30%;
-  display: flex;
+  display: none;
   position: absolute;
   animation: rotate 1s ease infinite;
 }

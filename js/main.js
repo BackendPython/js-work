@@ -2,6 +2,7 @@ let player_heal_box = document.querySelector('.player-1-heal')
 let rival_heal_box = document.querySelector('.rival-1-heal')
 const character = document.querySelector('.character')
 let computerBtn = document.querySelector('.computer')
+let rotateImage = document.querySelector('.rotate')
 let selectPage = document.querySelector('.select')
 let friendBtn = document.querySelector('.friend')
 let zaxiraText = document.querySelector('.text')
@@ -10,8 +11,9 @@ let rival = document.querySelectorAll('.rival')
 let heals = document.querySelector('.heals')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
-let selectPlayer = true;
-let gameStart = true;
+let selectPlayer = false;
+let errorRotate = false;
+let gameStart = false;
 
 let player_details = {
     heal: 100,
@@ -24,7 +26,24 @@ let rival_details = {
     winner: false,
 }
 
+// functions
+function startFlex(){
+    heals.style.display = 'flex'
+    rival[0].style.display = 'flex'
+    character.style.display = 'flex'
+    selectPage.style.display = 'none'
+    rotateImage.style.display = 'none'
+    fullBox.style.backgroundImage = 'url("/images/background.png")'
+    }
 
+function endFlex(){
+    heals.style.display = 'none'
+    rival[0].style.display = 'none'
+    character.style.display = 'none'
+    selectPage.style.display = 'none'
+    rotateImage.style.display = 'flex'
+    fullBox.style.backgroundImage = 'none'
+}
 
 // select Type Fighting
 friendBtn.addEventListener('click', function(){
@@ -57,15 +76,20 @@ let check = setInterval(() => {
             }
         }, 501);
     }
-    if (gameStart==true) {
-        let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
-        let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
-        zaxiraText.textContent = `${bodyWidth} va ${bodyHeight}`
-        heals.style.display = 'flex'
-        rival[0].style.display = 'flex'
-        character.style.display = 'flex'
-        selectPage.style.display = 'none'
-        fullBox.style.backgroundImage = 'url("/images/background.png")'
+    if (gameStart==true&&errorRotate==false) {
+        startFlex()
+    }
+    let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
+    let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
+    if (bodyWidth<bodyHeight) {
+        errorRotate = true
+        if (gameStart==false) {
+            
+        }
+    }
+    if(bodyWidth>bodyHeight){
+        errorRotate = false
+        startFlex()
     }
 });
 
