@@ -58,6 +58,9 @@ let check = setInterval(() => {
         }, 501);
     }
     if (gameStart==true) {
+        let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
+        let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
+        zaxiraText.textContent = `${bodyWidth} va ${bodyHeight}`
         heals.style.display = 'flex'
         rival[0].style.display = 'flex'
         character.style.display = 'flex'
@@ -122,9 +125,6 @@ let check2 = setInterval(() => {
         if (selectPlayer&&gameStart==true) {
             if (rivalLeft-characterLeft<40&&rivalLeft-characterLeft>-40) {
                 zaxiraText.textContent = 'Attack'
-            }
-            else{
-                zaxiraText.textContent = ''
             }
         }
     })

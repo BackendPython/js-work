@@ -112,7 +112,7 @@ body{
   justify-content: space-evenly;
 }
 .rival-1-heal-box{
-  left: 20px;
+  left: 2.5%;
   width: 80%;
   height: 70%;
   position: absolute;
@@ -316,6 +316,12 @@ body{
 @media screen and (max-width: 450px) {
   .player-text, .rival-text{
     font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .player-text, .rival-text{
+    font-size: 7px;
   }
 }
 
