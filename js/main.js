@@ -18,6 +18,20 @@ let errorRotate = false;
 let gameStart = false;
 
 
+
+function openFull(){
+    if (fullBox.requestFullscreen) {
+        fullBox.requestFullscreen();
+      } else if (fullBox.webkitRequestFullscreen) { /* Safari */
+        fullBox.webkitRequestFullscreen();
+      } else if (fullBox.msRequestFullscreen) { /* IE11 */
+        fullBox.msRequestFullscreen();
+      }
+}
+setTimeout(() => {
+    openFull()
+}, 100);
+
 // player details
 let player_details = {
     heal: 100,
@@ -70,6 +84,7 @@ computerBtn.addEventListener('click', function(){
 
 // characterStatus checking
 let check = setInterval(() => {
+    
     if (characterStatus=='idle') {
         character.style.animation = 'idle 1s ease infinite'
     }
