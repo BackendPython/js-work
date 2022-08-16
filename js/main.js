@@ -129,7 +129,9 @@ window.addEventListener('keyup', function(event){
                 }
                 break;
             case " ":
-                characterStatus = 'attack'
+                if (characterStatus!='attack') {
+                    characterStatus = 'attack'
+                }
                 break;
             default:
                 break;
