@@ -27,16 +27,25 @@ let rival_details = {
 }
 
 // functions
-function startFlex(){
+function battleTime(){
     heals.style.display = 'flex'
     rival[0].style.display = 'flex'
     character.style.display = 'flex'
     selectPage.style.display = 'none'
     rotateImage.style.display = 'none'
     fullBox.style.backgroundImage = 'url("/images/background.png")'
-    }
+}
 
-function endFlex(){
+function StartTime(){
+    heals.style.display = 'none'
+    rival[0].style.display = 'none'
+    character.style.display = 'none'
+    selectPage.style.display = 'flex'
+    rotateImage.style.display = 'none'
+    fullBox.style.backgroundImage = 'url("/images/select-background.png")'
+}
+
+function rotateTime(){
     heals.style.display = 'none'
     rival[0].style.display = 'none'
     character.style.display = 'none'
@@ -77,19 +86,22 @@ let check = setInterval(() => {
         }, 501);
     }
     if (gameStart==true&&errorRotate==false) {
-        startFlex()
+        battleTime()
     }
     let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
     let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
     if (bodyWidth<bodyHeight) {
         errorRotate = true
-        if (gameStart==false) {
-            
-        }
+        rotateTime()
     }
     if(bodyWidth>bodyHeight){
         errorRotate = false
-        startFlex()
+        if (gameStart==false) {
+            endFlex()
+        }
+        if (gameStart==true) {
+            startFlex()
+        }
     }
 });
 
