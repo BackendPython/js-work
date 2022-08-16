@@ -1,4 +1,6 @@
+let player_heal_text = document.querySelector('.player-1-heal-text')
 let player_heal_box = document.querySelector('.player-1-heal')
+let rival_heal_text = document.querySelector('.rival-1-heal-text')
 let rival_heal_box = document.querySelector('.rival-1-heal')
 const character = document.querySelector('.character')
 let computerBtn = document.querySelector('.computer')
@@ -11,9 +13,10 @@ let rival = document.querySelectorAll('.rival')
 let heals = document.querySelector('.heals')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
-let selectPlayer = false;
+let selectPlayer = true;
 let errorRotate = false;
-let gameStart = false;
+let gameStart = true;
+
 
 // player details
 let player_details = {
@@ -88,6 +91,7 @@ let check = setInterval(() => {
     }
     if (gameStart==true&&errorRotate==false) {
         battleTime()
+        player_heal_box
     }
     let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
     let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
