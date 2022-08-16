@@ -36,11 +36,11 @@ function battleTime(){
     fullBox.style.backgroundImage = 'url("/images/background.png")'
 }
 
-function StartTime(){
+function startTime(){
     heals.style.display = 'none'
     rival[0].style.display = 'none'
     character.style.display = 'none'
-    selectPage.style.display = 'flex'
+    selectPage.style.display = 'grid'
     rotateImage.style.display = 'none'
     fullBox.style.backgroundImage = 'url("/images/select-background.png")'
 }
@@ -97,10 +97,10 @@ let check = setInterval(() => {
     if(bodyWidth>bodyHeight){
         errorRotate = false
         if (gameStart==false) {
-            endFlex()
+            startTime()
         }
         if (gameStart==true) {
-            startFlex()
+            battleTime()
         }
     }
 });
