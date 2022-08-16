@@ -6,8 +6,8 @@
 }
 body{
     display: flex;
-    min-height: 100vh;
     overflow: hidden;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     background-color: royalblue;
@@ -54,7 +54,7 @@ body{
   justify-content: space-between;
 }
 .player-1{
-  left: 1.5%;
+  left: 3%;
   width: 45%;
   height: 80%;
   display: flex;
@@ -66,11 +66,10 @@ body{
   justify-content: space-between;
 }
 .player-text{
-  left: 0;
   width: 15%;
   display: flex;
   color: green;
-  margin-left: 20px;
+  font-size: 40px;
   position: absolute;
   align-items: center;
   transform: skew(-40deg);
@@ -92,7 +91,7 @@ body{
 .rival-1{
   width: 45%;
   height: 80%;
-  right: 1.5%;
+  right: 3%;
   display: flex;
   padding-left: 20px;
   position: absolute;
@@ -102,20 +101,21 @@ body{
   justify-content: space-between;
 }
 .rival-text{
+  right: 0%;
   width: 15%;
-  right: 2.5%;
   display: flex;
   color: green;
   font-size: 40px;
-  margin-left: 20px;
   position: absolute;
   align-items: center;
   transform: skew(40deg);
   justify-content: space-evenly;
 }
 .rival-1-heal-box{
+  left: 20px;
   width: 80%;
   height: 70%;
+  position: absolute;
   background-color: red;
   transform: rotateY(180deg);
 }
@@ -278,6 +278,45 @@ body{
 .select .friend:active{
 	box-shadow: none;
 	transform: translateY(10px);
+}
+
+
+/* health media style  */
+
+@media screen and (max-width: 1625px) {
+  .player-text, .rival-text{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1165px) {
+  .player-text, .rival-text{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 865px) {
+  .player-text, .rival-text{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .player-text, .rival-text{
+    font-size: 12px;
+  }
+  .player-text{
+    left: 2%;
+  }
+  .player-1-heal-box, .rival-1-heal-box{
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .player-text, .rival-text{
+    font-size: 8px;
+  }
 }
 
 
