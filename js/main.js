@@ -15,6 +15,7 @@ let selectPlayer = false;
 let errorRotate = false;
 let gameStart = false;
 
+// player details
 let player_details = {
     heal: 100,
     attack: 10,
