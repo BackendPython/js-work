@@ -142,6 +142,15 @@ body{
   background-image: url('/images/rival/idle/idle-1.png');
 }
 
+/* rotate style */
+
+.rotate{
+  height: 30%;
+  display: flex;
+  position: absolute;
+  animation: rotate 1s ease infinite;
+}
+
 /* characater animation */
 @keyframes idle {
    25%{
@@ -243,6 +252,17 @@ body{
   }
   100%{
     background-image: url('/images/rival/attack/attack-4.png');
+  }
+}
+
+/* rotate animation */
+
+@keyframes rotate {
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(100deg);
   }
 }
 
