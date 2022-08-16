@@ -28,9 +28,6 @@ function openFull(){
         fullBox.msRequestFullscreen();
       }
 }
-setTimeout(() => {
-    openFull()
-}, 100);
 
 // player details
 let player_details = {
