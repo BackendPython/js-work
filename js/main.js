@@ -15,7 +15,7 @@ let characterStatus = 'idle';
 let rivalStatus = 'idle2';
 let selectPlayer = true;
 let errorRotate = false;
-let gameStart = true;
+let gameStart = false;
 
 
 // player details
@@ -82,12 +82,12 @@ let check = setInterval(() => {
         }, 1001);
     }
     if (characterStatus=='attack') {
-        character.style.animation = 'attack 0.5s ease infinite'
+        character.style.animation = 'attack 0.3s ease infinite'
         setTimeout(() => {
             if (characterStatus=='attack') {
                 characterStatus = 'idle'
             }
-        }, 501);
+        }, 310);
     }
     if (gameStart==true&&errorRotate==false) {
         battleTime()
@@ -129,7 +129,7 @@ window.addEventListener('keyup', function(event){
                 }
                 break;
             case " ":
-                if (characterStatus!='attack') {
+                if (characterStatus=='idle') {
                     characterStatus = 'attack'
                 }
                 break;
