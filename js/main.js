@@ -77,6 +77,22 @@ function rotateTime(){
     fullBox.style.backgroundImage = 'none'
 }
 
+function rival_win(){
+    selectPlayer = null;
+    rival_details.winner = false;
+    player_details.winner = false;
+    winner_page.style.display = 'block';
+    document.querySelector('.winner-image').style.animation = 'idle2 1s infinite';
+}
+
+function player_win(){
+    selectPlayer = null;
+    rival_details.winner = false;
+    player_details.winner = false;
+    winner_page.style.display = 'block';
+    document.querySelector('.winner-image').style.animation = 'idle 1s infinite';
+}
+
 // select
 friendBtn.addEventListener('click', function(){
     gameStart = true
@@ -159,14 +175,9 @@ window.addEventListener('keyup', function(event){
                 break;
             default:
                 break;
-            }
         }
-    })
-    function player_win(){
-        selectPlayer = null;
-        winner_page.style.display = 'block'
-        document.querySelector('.winner-image').style.animation = 'idle 1s infinite'
     }
+})
 
 // rivalStatus checking
 let check2 = setInterval(() => {
