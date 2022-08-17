@@ -2,6 +2,8 @@ let player_heal_text = document.querySelector('.player-1-heal-text')
 let rival_heal_text = document.querySelector('.rival-1-heal-text')
 let player_heal_box = document.querySelector('.player-1-heal')
 let rival_heal_box = document.querySelector('.rival-1-heal')
+let reload_button = document.querySelector('.reload-game')
+let winner_page = document.querySelector('.winner-page')
 const character = document.querySelector('.character')
 let computerBtn = document.querySelector('.computer')
 let rotateImage = document.querySelector('.rotate')
@@ -207,7 +209,7 @@ let check2 = setInterval(() => {
             }
             if (gameStart==true) {
                 if (player_details.winner==true) {
-                    character.requestFullscreen()
+                    
                 }
                 if (rival_details.winner==true) {
                     fullBox.style.display = 'none'
