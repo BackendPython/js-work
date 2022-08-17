@@ -185,7 +185,7 @@ let check2 = setInterval(() => {
             }
         }
     })
-}, 1);
+});
 
 // rival controller keyup
 window.addEventListener('keyup', function(event){

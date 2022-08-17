@@ -266,14 +266,14 @@ body{
 	display: grid;
 }
 .select .computer{
-	font-size: 30px;
+  font-size: 30px;
+  margin-top: 0px;
+  margin-left: 50px;
 	padding: 10px 15px;
 	border-radius: 20px;
 	background-color: aqua;
 	border: 2px dashed blue;
 	box-shadow: -5px 10px black;
-  margin-top: 60px;
-  margin-left: 50px;
 }
 .select .computer:active{
   box-shadow: none;
@@ -281,13 +281,13 @@ body{
 }
 .select .friend{
 	font-size: 30px;
+  margin-top: 60px;
+  margin-left: 50px;
 	padding: 10px 15px;
 	border-radius: 20px;
 	background-color: aqua;
 	border: 2px dashed  blue;
 	box-shadow: -5px 10px black;
-  margin-left: 50px;
-  margin-top: 60px;
 }
 .select .friend:active{
 	box-shadow: none;
