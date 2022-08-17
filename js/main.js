@@ -190,6 +190,9 @@ let check2 = setInterval(() => {
                     setTimeout(() => {
                         player_details.blow_turn = false
                     }, 501);
+                    if (rival_details.heal==0&&player_details.heal>0) {
+                        
+                    }
                 }
                 if (player_details.heal>0&&rivalStatus=='attack2'&&rival_details.blow_turn==false) {
                     player_details.heal = player_details.heal - rival_details.attack
