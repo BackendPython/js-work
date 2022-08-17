@@ -48,16 +48,19 @@ let rival_details = {
 
 // functions
 function reload_game() {
-    selectPlayer = null;
+    gameStart = false
     rival_details.heal = 100;
     player_details.heal = 100;
+    rival[0].style.left = null;
+    rival[0].style.right = '2%';
+    character.style.left = '3%'
     heals.style.display = 'none';
     rival_details.winner = false;
     player_details.winner = false;
     rival[0].style.display = 'none';
     character.style.display = 'none';
     selectPage.style.display = 'grid';
-    winner_page.style.display = 'block';
+    winner_page.style.display = 'none';
     fullBox.style.backgroundImage = 'url("/images/select-background.png")';
 }
 
