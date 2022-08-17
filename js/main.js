@@ -31,7 +31,7 @@ function openFull(){
 
 // player details
 let player_details = {
-    heal: 100,
+    heal: 70,
     attack: 10,
     winner: false,
 }
@@ -105,6 +105,7 @@ let check = setInterval(() => {
     if (gameStart==true&&errorRotate==false) {
         battleTime()
         player_heal_box.style.width = player_details.heal + '%'
+        player_heal_text.innerHTML = player_details.heal
     }
     let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
     let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
@@ -188,7 +189,7 @@ let check2 = setInterval(() => {
 
 // rival controller keyup
 window.addEventListener('keyup', function(event){
-    if (gameStart==true&&selectPlayer==true) {
+    if (gameStart==true&&selectPlayer==true&&errorRotate==false) {
         rival.forEach(function(rival2){
             let rivalLeft = parseInt(window.getComputedStyle(rival2).getPropertyValue('left'))
             let rivalRight = parseInt(window.getComputedStyle(rival2).getPropertyValue('right'))
