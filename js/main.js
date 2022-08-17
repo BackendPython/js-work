@@ -1,6 +1,6 @@
 let player_heal_text = document.querySelector('.player-1-heal-text')
-let player_heal_box = document.querySelector('.player-1-heal')
 let rival_heal_text = document.querySelector('.rival-1-heal-text')
+let player_heal_box = document.querySelector('.player-1-heal')
 let rival_heal_box = document.querySelector('.rival-1-heal')
 const character = document.querySelector('.character')
 let computerBtn = document.querySelector('.computer')
@@ -101,9 +101,10 @@ let check = setInterval(() => {
             }
         }, 310);
     }
+
     if (gameStart==true&&errorRotate==false) {
         battleTime()
-        player_heal_box
+        player_heal_box.style.width = player_details.heal + '%'
     }
     let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
     let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
