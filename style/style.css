@@ -156,8 +156,6 @@ body{
   margin-left: 35%;
   background-size: cover;
   animation: idle 1s infinite;
-  background-repeat: no-repeat;
-  background-image: url('/images/idle/idle-1.png');
 }
 
 .winner-page .reload-game{
