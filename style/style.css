@@ -141,22 +141,29 @@ body{
 .winner-page{
   width: 40%;
   height: 30%;
-  display: grid;
+  font-size: 100%;
+  margin-top: -10%;
   color: chocolate;
   position: absolute;
   text-align: center;
-  border: 2px solid black;
+  flex-direction: column;
 }
 
 .winner-page .winner-image{
   top: 0%;
-  width: 30%;
-  height: 70%;
-  margin: auto;
-  border: 2px solid black;
+  width: 40%;
+  height: 100%;
+  margin-left: 35%;
+  background-size: cover;
   animation: idle 1s infinite;
   background-repeat: no-repeat;
   background-image: url('/images/idle/idle-1.png');
+}
+
+.winner-page .reload-game{
+  margin-top: 2%;
+  padding: 10px 15px;
+  background-color: green;
 }
 
 /* rotate style */
