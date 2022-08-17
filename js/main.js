@@ -105,7 +105,7 @@ let check = setInterval(() => {
             if (characterStatus=='attack') {
                 characterStatus = 'idle'
             }
-        }, 310);
+        }, 301);
     }
     if (gameStart==true&&errorRotate==false) {
         battleTime()
@@ -162,9 +162,7 @@ window.addEventListener('keyup', function(event){
 let check2 = setInterval(() => {
     rival.forEach(function(rival){
         let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
-        let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
         let rivalLeft = parseInt(window.getComputedStyle(rival).getPropertyValue('left'))
-        let rivalRight = parseInt(window.getComputedStyle(rival).getPropertyValue('right'))
         if (rivalStatus=='idle2') {
             rival.style.animation = 'idle2 1s infinite'
         }
