@@ -15,7 +15,7 @@ let rival = document.querySelectorAll('.rival')
 let heals = document.querySelector('.heals')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
-let selectPlayer = true;
+let selectPlayer = null;
 let errorRotate = false;
 let gameStart = false;
 let media = false;
@@ -47,13 +47,16 @@ let rival_details = {
 }
 
 // functions
+function reload_game() {
+    
+}
+
 function battleTime(){
     heals.style.display = 'flex'
     rival[0].style.display = 'flex'
     character.style.display = 'flex'
     selectPage.style.display = 'none'
     rotateImage.style.display = 'none'
-    winner_page.style.display = 'none'
     fullBox.style.backgroundImage = 'url("/images/background.png")'
 }
 
@@ -63,7 +66,6 @@ function startTime(){
     character.style.display = 'none'
     selectPage.style.display = 'grid'
     rotateImage.style.display = 'none'
-    winner_page.style.display = 'none'
     fullBox.style.backgroundImage = 'url("/images/select-background.png")'
 }
 
@@ -228,12 +230,10 @@ let check2 = setInterval(() => {
             }
             if (gameStart==true) {
                 if (player_details.winner==true) {
-
+                    player_win()
                 }
                 if (rival_details.winner==true) {
-                    selectPlayer = null;
-                    winner_page.style.display = 'block'
-                    document.querySelector('.winner-image').style.animation = 'idle2 1s infinite'
+                    rival_win()
                 }
             }
         }
