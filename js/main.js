@@ -15,11 +15,11 @@ let characterStatus = 'idle';
 let rivalStatus = 'idle2';
 let selectPlayer = true;
 let errorRotate = false;
-let gameStart = false;
+let gameStart = true;
 let media = false;
 
 
-
+// fullscreen
 function openFull(){
     if (fullBox.requestFullscreen) {
         fullBox.requestFullscreen();
@@ -30,16 +30,18 @@ function openFull(){
       }
 }
 
-// player details
+// details
 let player_details = {
-    heal: 70,
+    heal: 100,
     attack: 10,
     winner: false,
+    blow_turn: false,
 }
 let rival_details = {
     heal: 100,
     attack: 10,
     winner: false,
+    blow_turn: false,
 }
 
 // functions
@@ -70,7 +72,7 @@ function rotateTime(){
     fullBox.style.backgroundImage = 'none'
 }
 
-// select Type Fighting
+// select
 friendBtn.addEventListener('click', function(){
     gameStart = true
     selectPlayer = true
@@ -82,6 +84,9 @@ computerBtn.addEventListener('click', function(){
 
 // characterStatus checking
 let check = setInterval(() => {
+
+    let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
+    let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
     
     if (characterStatus=='idle') {
         character.style.animation = 'idle 1s ease infinite'
@@ -102,14 +107,13 @@ let check = setInterval(() => {
             }
         }, 310);
     }
-
     if (gameStart==true&&errorRotate==false) {
         battleTime()
         player_heal_box.style.width = player_details.heal + '%'
+        rival_heal_box.style.width = rival_details.heal + '%'
         player_heal_text.innerHTML = player_details.heal
+        rival_heal_text.innerHTML = rival_details.heal
     }
-    let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
-    let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
     if (bodyWidth<bodyHeight) {
         errorRotate = true
         rotateTime()
@@ -127,7 +131,7 @@ let check = setInterval(() => {
 
 // character controller keyup
 window.addEventListener('keyup', function(event){
-    if (gameStart==true) {
+    if (gameStart==true&&errorRotate==false) {
         let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
         let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
         switch (event.key) {
@@ -180,9 +184,19 @@ let check2 = setInterval(() => {
                 }
             }, 501);
         }
-        if (selectPlayer&&gameStart==true) {
+        if (gameStart==true&&errorRotate==false) {
             if (rivalLeft-characterLeft<40&&rivalLeft-characterLeft>-40) {
-                zaxiraText.textContent = 'Attack'
+                if (rival_details.heal>0&&characterStatus=='attack'&&player_details.blow_turn==false) {
+                    rival_details.heal = rival_details.heal - player_details.attack
+                    player_details.blow_turn = true
+                    setTimeout(() => {
+                        player_details.blow_turn = false
+                    }, 501);
+                }
+                if (player_details.heal>0&&rivalStatus=='attack') {
+                    player_details.heal = player_details.heal - rival_details.attack
+                    rivalStatus = 'idle'
+                }
             }
         }
     })
