@@ -16,6 +16,7 @@ let rivalStatus = 'idle2';
 let selectPlayer = true;
 let errorRotate = false;
 let gameStart = false;
+let media = false;
 
 
 
