@@ -182,6 +182,12 @@ let check2 = setInterval(() => {
                 }
             }, 301);
         }
+        if (rival_details.heal==0&&player_details.heal>0) {
+            player_details.winner = true
+        }
+        if (player_details.heal==0&&rival_details.heal>0) {
+            rival_details.winner = true
+        }
         if (gameStart==true&&errorRotate==false) {
             if (rivalLeft-characterLeft<40&&rivalLeft-characterLeft>-40) {
                 if (rival_details.heal>0&&characterStatus=='attack'&&player_details.blow_turn==false) {
@@ -190,9 +196,6 @@ let check2 = setInterval(() => {
                     setTimeout(() => {
                         player_details.blow_turn = false
                     }, 501);
-                    if (rival_details.heal==0&&player_details.heal>0) {
-                        
-                    }
                 }
                 if (player_details.heal>0&&rivalStatus=='attack2'&&rival_details.blow_turn==false) {
                     player_details.heal = player_details.heal - rival_details.attack
@@ -200,6 +203,14 @@ let check2 = setInterval(() => {
                     setTimeout(() => {
                         rival_details.blow_turn = false
                     }, 501);
+                }
+            }
+            if (gameStart==true) {
+                if (player_details.winner==true) {
+                    character.requestFullscreen()
+                }
+                if (rival_details.winner==true) {
+                    fullBox.style.display = 'none'
                 }
             }
         }
