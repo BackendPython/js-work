@@ -177,12 +177,12 @@ let check2 = setInterval(() => {
             }, 1001);
         }
         if (rivalStatus=='attack2') {
-            rival.style.animation = 'attack2 0.5s infinite'
+            rival.style.animation = 'attack2 0.3s infinite'
             setTimeout(() => {
                 if (rivalStatus=='attack2') {
                     rivalStatus = 'idle2'
                 }
-            }, 501);
+            }, 301);
         }
         if (gameStart==true&&errorRotate==false) {
             if (rivalLeft-characterLeft<40&&rivalLeft-characterLeft>-40) {
@@ -193,9 +193,12 @@ let check2 = setInterval(() => {
                         player_details.blow_turn = false
                     }, 501);
                 }
-                if (player_details.heal>0&&rivalStatus=='attack') {
+                if (player_details.heal>0&&rivalStatus=='attack2'&&rival_details.blow_turn==false) {
                     player_details.heal = player_details.heal - rival_details.attack
-                    rivalStatus = 'idle'
+                    rival_details.blow_turn = true
+                    setTimeout(() => {
+                        rival_details.blow_turn = false
+                    }, 501);
                 }
             }
         }
