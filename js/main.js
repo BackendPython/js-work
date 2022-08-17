@@ -209,10 +209,12 @@ let check2 = setInterval(() => {
             }
             if (gameStart==true) {
                 if (player_details.winner==true) {
+                    selectPlayer = null;
                     winner_page.style.display = 'block'
                     document.querySelector('.winner-image').style.animation = 'idle 1s infinite'
                 }
                 if (rival_details.winner==true) {
+                    selectPlayer = null;
                     winner_page.style.display = 'block'
                     document.querySelector('.winner-image').style.animation = 'idle2 1s infinite'
                 }
