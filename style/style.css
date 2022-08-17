@@ -141,7 +141,7 @@ body{
 .winner-page{
   width: 40%;
   height: 30%;
-  font-size: 100%;
+  display: none;
   margin-top: -10%;
   color: chocolate;
   position: absolute;
