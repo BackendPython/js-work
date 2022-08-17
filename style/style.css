@@ -260,7 +260,21 @@ body{
   }
 }
 
-/* select player page */
+/* winner page  */
+
+.winner-page{
+  display: grid;
+  color: chocolate;
+  position: absolute;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.winner-page .winner-image{
+  animation: idle 1s infinite;
+}
+
+/* select page */
 
 .select{
 	display: grid;
@@ -293,7 +307,6 @@ body{
 	box-shadow: none;
 	transform: translateY(10px);
 }
-
 
 /* health media style  */
 
