@@ -53,6 +53,7 @@ function battleTime(){
     character.style.display = 'flex'
     selectPage.style.display = 'none'
     rotateImage.style.display = 'none'
+    winner_page.style.display = 'none'
     fullBox.style.backgroundImage = 'url("/images/background.png")'
 }
 
@@ -62,6 +63,7 @@ function startTime(){
     character.style.display = 'none'
     selectPage.style.display = 'grid'
     rotateImage.style.display = 'none'
+    winner_page.style.display = 'none'
     fullBox.style.backgroundImage = 'url("/images/select-background.png")'
 }
 
@@ -71,6 +73,7 @@ function rotateTime(){
     character.style.display = 'none'
     selectPage.style.display = 'none'
     rotateImage.style.display = 'flex'
+    winner_page.style.display = 'none'
     fullBox.style.backgroundImage = 'none'
 }
 
