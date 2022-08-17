@@ -136,6 +136,29 @@ body{
   background-image: url('/images/rival/idle/idle-1.png');
 }
 
+/* winner page  */
+
+.winner-page{
+  width: 40%;
+  height: 30%;
+  display: grid;
+  color: chocolate;
+  position: absolute;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.winner-page .winner-image{
+  top: 0%;
+  width: 30%;
+  height: 70%;
+  margin: auto;
+  border: 2px solid black;
+  animation: idle 1s infinite;
+  background-repeat: no-repeat;
+  background-image: url('/images/idle/idle-1.png');
+}
+
 /* rotate style */
 
 .rotate{
@@ -258,20 +281,6 @@ body{
   100%{
     transform: rotate(100deg);
   }
-}
-
-/* winner page  */
-
-.winner-page{
-  display: grid;
-  color: chocolate;
-  position: absolute;
-  text-align: center;
-  border: 2px solid black;
-}
-
-.winner-page .winner-image{
-  animation: idle 1s infinite;
 }
 
 /* select page */
