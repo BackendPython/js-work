@@ -48,7 +48,17 @@ let rival_details = {
 
 // functions
 function reload_game() {
-    
+    selectPlayer = null;
+    rival_details.heal = 100;
+    player_details.heal = 100;
+    heals.style.display = 'none';
+    rival_details.winner = false;
+    player_details.winner = false;
+    rival[0].style.display = 'none';
+    character.style.display = 'none';
+    selectPage.style.display = 'grid';
+    winner_page.style.display = 'block';
+    fullBox.style.backgroundImage = 'url("/images/select-background.png")';
 }
 
 function battleTime(){
