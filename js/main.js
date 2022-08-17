@@ -133,7 +133,7 @@ let check = setInterval(() => {
 
 // character controller keyup
 window.addEventListener('keyup', function(event){
-    if (gameStart==true&&errorRotate==false) {
+    if (gameStart==true&&errorRotate==false&&selectPlayer==true||false) {
         let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
         let characterRight = parseInt(window.getComputedStyle(character).getPropertyValue('right'))
         switch (event.key) {
