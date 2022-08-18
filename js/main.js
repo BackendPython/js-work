@@ -306,7 +306,7 @@ let computer_gameplay = setInterval(() => {
             }
             else{
                 setTimeout(() => {
-                    if (rivalStatus=='idle2') {
+                    if (rivalStatus!=='walk2') {
                         rivalStatus = 'walk2'
                     }
                     if (rivalLeft-characterLeft>40) {
