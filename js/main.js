@@ -294,27 +294,28 @@ let computer_gameplay = setInterval(() => {
         let rivalRight = parseInt(window.getComputedStyle(rival2).getPropertyValue('right'))
         let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
         if (gameStart==true&&errorRotate==false&&selectPlayer==false) {
-            rival_details.attack = 10
             if (rivalLeft-characterLeft<40&&rivalLeft-characterLeft>-40) {
-                if (player_details.heal>0) {
+                if (player_details.heal>0&&rival_details.blow_turn==false) {
                     player_details.heal = player_details.heal - rival_details.attack
                     rival_details.blow_turn = true
+                    rivalStatus = 'attack2'
                     setTimeout(() => {
                         rival_details.blow_turn = false
-                    }, 501);
+                    }, 1001);
                 }
             }
             else{
                 setTimeout(() => {
-                    rivalStatus = 'walk2'
-                    if (rivalLeft>100) {
+                    if (rivalStatus=='idle2') {
+                        rivalStatus = 'walk2'
+                    }
+                    if (rivalLeft-characterLeft>40) {
                         rival2.style.left = rivalLeft - 100 + 'px'
                     }
-                    rivalStatus = 'walk2'
-                    if (rivalRight<100) {
+                    else{
                         rival2.style.left = rivalLeft + 100 + 'px'
                     }
-                }, 1000);
+                }, 2000);
             }
         }
     })
