@@ -22,6 +22,7 @@ body{
     justify-content: center;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: royalblue;
     background-image: url('/images/select-background.png');
 }
 .character{

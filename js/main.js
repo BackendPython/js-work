@@ -45,8 +45,12 @@ let rival_details = {
     winner: false,
     blow_turn: false,
 }
+// let computer_system = {
+//     attack: 20,
+// }
 
 // functions
+
 function reload_game() {
     gameStart = false
     rival_details.heal = 100;
@@ -287,10 +291,12 @@ window.addEventListener('keyup', function(event){
 let computer_gameplay = setInterval(() => {
     rival.forEach(function(rival2){
         let rivalLeft = parseInt(window.getComputedStyle(rival2).getPropertyValue('left'))
-        let chracterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
-        setTimeout(() => {
-            console.log(chracterLeft, rivalLeft);
-        }, 1000);
+        let playerLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
+        if (gameStart==true&&errorRotate==false&&selectPlayer==false) {
+            if (rivalLeft>100) {
+                
+            }
+        }
     })
 });
 
