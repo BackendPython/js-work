@@ -53,7 +53,7 @@ function reload_game() {
     player_details.heal = 100;
     rival[0].style.left = null;
     rival[0].style.right = '2%';
-    character.style.left = '3%'
+    character.style.left = '3%';
     heals.style.display = 'none';
     rival_details.winner = false;
     player_details.winner = false;
@@ -283,3 +283,14 @@ window.addEventListener('keyup', function(event){
         })
     }
 })
+
+let computer_gameplay = setInterval(() => {
+    rival.forEach(function(rival2){
+        let rivalLeft = parseInt(window.getComputedStyle(rival2).getPropertyValue('left'))
+        let chracterLeft = parseInt(window.getComputedStyle(character).getPropertyValue('left'))
+        setTimeout(() => {
+            console.log(chracterLeft, rivalLeft);
+        }, 1000);
+    })
+});
+
