@@ -301,7 +301,7 @@ let computer_gameplay = setInterval(() => {
                     rivalStatus = 'attack2'
                     setTimeout(() => {
                         rival_details.blow_turn = false
-                    }, 1001);
+                    }, 501);
                 }
             }
             else{
