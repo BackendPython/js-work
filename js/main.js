@@ -312,7 +312,7 @@ let computer_gameplay = setInterval(() => {
                     else{
                         rival2.style.left = rivalLeft + 100 + 'px'
                     }
-                }, 2000);
+                }, 1500);
             }
         }
     })
