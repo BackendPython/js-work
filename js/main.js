@@ -301,14 +301,11 @@ let computer_gameplay = setInterval(() => {
                     rivalStatus = 'attack2'
                     setTimeout(() => {
                         rival_details.blow_turn = false
-                    }, 501);
+                    }, 501);    
                 }
             }
             else{
                 setTimeout(() => {
-                    if (rivalStatus!=='walk2') {
-                        rivalStatus = 'walk2'
-                    }
                     if (rivalLeft-characterLeft>40) {
                         rival2.style.left = rivalLeft - 100 + 'px'
                     }
