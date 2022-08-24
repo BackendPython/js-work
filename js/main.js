@@ -167,6 +167,9 @@ let check = setInterval(() => {
             battleTime()
         }
     }
+    if (bodyWidth<1000&&errorRotate==false) {
+        media = true
+    }
 });
 
 // character controller keyup
