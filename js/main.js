@@ -47,12 +47,8 @@ let rival_details = {
     winner: false,
     blow_turn: false,
 }
-// let computer_system = {
-//     attack: 20,
-// }
 
 // functions
-
 function reload_game() {
     gameStart = false
     rival_details.heal = 100;
