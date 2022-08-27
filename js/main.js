@@ -123,7 +123,10 @@ computerBtn.addEventListener('click', function(){
     selectPlayer = false
 })
 survivalBtn.addEventListener('click', function(){
-    
+    gameStart = true
+    selectPlayer = false
+    rival_details.heal = 50
+    rival_details.attack = 5
 })
 
 
