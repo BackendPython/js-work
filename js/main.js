@@ -318,3 +318,6 @@ let computer_gameplay = setInterval(() => {
     })
 });
 
+
+// phone media controller
+
