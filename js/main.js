@@ -6,6 +6,7 @@ let reload_button = document.querySelector('.reload-game')
 let winner_page = document.querySelector('.winner-page')
 const character = document.querySelector('.character')
 let computerBtn = document.querySelector('.computer')
+let survivalBtn = document.querySelector('.survival')
 let rotateImage = document.querySelector('.rotate')
 let selectPage = document.querySelector('.select')
 let friendBtn = document.querySelector('.friend')
@@ -121,6 +122,10 @@ computerBtn.addEventListener('click', function(){
     gameStart = true
     selectPlayer = false
 })
+survivalBtn.addEventListener('click', function(){
+    
+})
+
 
 // characterStatus checking
 let check = setInterval(() => {
