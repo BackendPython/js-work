@@ -323,12 +323,13 @@ body{
 	transform: translateY(10px);
 }
 .select .survival{
+  color: white;
 	font-size: 30px;
   margin-top: 60px;
   margin-left: 50px;
 	padding: 10px 15px;
 	border-radius: 20px;
-	background-color: aqua;
+	background-color: red;
 	border: 2px dashed  blue;
 	box-shadow: -5px 10px black;
 }
