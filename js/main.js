@@ -124,6 +124,7 @@ computerBtn.addEventListener('click', function(){
     selectPlayer = false
 })
 survivalBtn.addEventListener('click', function(){
+    survival = true;
     gameStart = true;
     selectPlayer = false;
     rival_details.heal = 100;
@@ -231,8 +232,10 @@ let check2 = setInterval(() => {
                 }
             }, 301);
         }
-        if (rival_details.heal==0&&player_details.heal>0) {
-            player_details.winner = true
+        if (survival==false) {
+            if (rival_details.heal==0&&player_details.heal>0) {
+                player_details.winner = true
+            }
         }
         if (player_details.heal==0&&rival_details.heal>0) {
             rival_details.winner = true
