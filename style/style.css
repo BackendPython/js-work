@@ -139,11 +139,14 @@ body{
 
 .kills{
   left: 47%;
-  width: 6%;
-  height: 80%;
+  width: 3%;
+  height: 60%;
   z-index: 10;
   position: absolute;
-  border: 2px solid black;
+  transform: rotate(45deg);
+  border: 40px solid black;
+  border-top-color: transparent;
+  border-right-color: transparent;
 }
 /* winner page  */
 
