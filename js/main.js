@@ -39,7 +39,7 @@ function openFull(){
 // details
 let player_details = {
     heal: 100,
-    attack: 10,
+    attack: 50,
     winner: false,
     blow_turn: false,
 }
@@ -75,10 +75,6 @@ function battleTime(){
     selectPage.style.display = 'none'
     rotateImage.style.display = 'none'
     fullBox.style.backgroundImage = 'url("/images/background.png")'
-}
-
-function new_rival(){
-    rival_details.heal = 100
 }
 
 function startTime(){
@@ -246,10 +242,10 @@ let check2 = setInterval(() => {
                 kills_text.textContent = parseInt(kills_text.textContent) + 1
                 setTimeout(() => {
                     let new_rival = document.createElement('div')
-                    new_rival.setAttribute('class', 'rival')
+                    new_rival.classList.add('rival')
                     fullBox.appendChild(new_rival)
                     recover_time = false;
-                    new_rival()
+                    rival_details.heal = 100
                 }, 1000);
             }
         }
