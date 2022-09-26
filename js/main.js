@@ -234,6 +234,11 @@ let check2 = setInterval(() => {
                 player_details.winner = true
             }
         }
+        if (survival==true) {
+            if (rival_details.heal==0&&player_details.heal>0) {
+                player_details.winner = true
+            }
+        }
         if (player_details.heal==0&&rival_details.heal>0) {
             rival_details.winner = true
         }
@@ -329,4 +334,5 @@ let computer_gameplay = setInterval(() => {
 
 
 // phone media controller
+
 
