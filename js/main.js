@@ -17,6 +17,7 @@ let rival = document.querySelectorAll('.rival')
 let heals = document.querySelector('.heals')
 let characterStatus = 'idle';
 let rivalStatus = 'idle2';
+let recover_time = false;
 let selectPlayer = null;
 let errorRotate = false;
 let gameStart = false;
@@ -234,10 +235,14 @@ let check2 = setInterval(() => {
                 player_details.winner = true
             }
         }
-        if (survival==true) {
+        if (survival==true&&recover_time==false) {
             if (rival_details.heal==0&&player_details.heal>0) {
                 rival.remove()
-                kills_text = parseInt(kills_text)+1
+                recover_time = true
+                kills_text.textContent = parseInt(kills_text.textContent) + 1
+                setTimeout(() => {
+                    
+                }, 1000);
             }
         }
         if (player_details.heal==0&&rival_details.heal>0) {
