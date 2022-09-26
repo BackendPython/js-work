@@ -237,15 +237,15 @@ let check2 = setInterval(() => {
         }
         if (survival==true&&recover_time==false) {
             if (rival_details.heal==0&&player_details.heal>0) {
-                rival.remove()
-                recover_time = true
-                kills_text.textContent = parseInt(kills_text.textContent) + 1
+                rivalStatus = 'none';
+                recover_time = true;
+                rival.style.display = 'none';
+                rival.style.left = '80% !important';
+                kills_text.textContent = parseInt(kills_text.textContent) + 1;
                 setTimeout(() => {
-                    let new_rival = document.createElement('div')
-                    new_rival.classList.add('rival')
-                    fullBox.appendChild(new_rival)
                     recover_time = false;
-                    rival_details.heal = 100
+                    rivalStatus = 'idle-2';
+                    rival_details.heal = 100;
                 }, 1000);
             }
         }
@@ -296,9 +296,7 @@ window.addEventListener('keyup', function(event){
                     break;
                 case "ArrowRight":
                     rivalStatus = 'walk2'
-                    if (rivalRight>100) {
-                        rival2.style.left = rivalLeft + 100 + 'px'
-                    }
+                    rival2.style.left = rivalLeft + 100 + 'px'
                     break;
                 case "ArrowDown":
                     if (rivalStatus=='idle2') {
