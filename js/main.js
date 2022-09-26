@@ -236,7 +236,8 @@ let check2 = setInterval(() => {
         }
         if (survival==true) {
             if (rival_details.heal==0&&player_details.heal>0) {
-                player_details.winner = true
+                rival.remove()
+                kills_text = parseInt(kills_text)+1
             }
         }
         if (player_details.heal==0&&rival_details.heal>0) {
