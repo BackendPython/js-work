@@ -250,7 +250,6 @@ let check2 = setInterval(() => {
                     fullBox.appendChild(new_rival)
                     recover_time = false;
                     new_rival()
-                    
                 }, 1000);
             }
         }
