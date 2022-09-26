@@ -39,7 +39,7 @@ function openFull(){
 // details
 let player_details = {
     heal: 100,
-    attack: 50,
+    attack: 10,
     winner: false,
     blow_turn: false,
 }
@@ -300,7 +300,7 @@ window.addEventListener('keyup', function(event){
                     break;
                 case "ArrowRight":
                     rivalStatus = 'walk2'
-                    if (rivalRight<100) {
+                    if (rivalRight>100) {
                         rival2.style.left = rivalLeft + 100 + 'px'
                     }
                     break;
