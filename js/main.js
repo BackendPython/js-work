@@ -77,7 +77,7 @@ function battleTime(){
     fullBox.style.backgroundImage = 'url("/images/background.png")'
 }
 
-function survival_recover_rival(){
+function new_rival(){
     rival_details.heal = 100
 }
 
@@ -249,6 +249,8 @@ let check2 = setInterval(() => {
                     new_rival.setAttribute('class', 'rival')
                     fullBox.appendChild(new_rival)
                     recover_time = false;
+                    new_rival()
+                    
                 }, 1000);
             }
         }
