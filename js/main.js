@@ -238,9 +238,9 @@ let check2 = setInterval(() => {
         }
         if (survival==true&&recover_time==false) {
             if (rival_details.heal==0&&player_details.heal>0) {
+                rival.remove()
                 recover_time = true;
                 kills_text.textContent = parseInt(kills_text.textContent) + 1;
-                rival.remove()
                 setTimeout(() => {
                     let new_rival = document.createElement('div')
                     new_rival.setAttribute('class', 'rival')
