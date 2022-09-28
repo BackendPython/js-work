@@ -132,6 +132,7 @@ survivalBtn.addEventListener('click', function(){
 
 // characterStatus checking
 let check = setInterval(() => {
+    rival = document.querySelectorAll('.rival')
 
     let bodyWidth = parseInt(window.getComputedStyle(document.body).getPropertyValue('width'))
     let bodyHeight = parseInt(window.getComputedStyle(document.body).getPropertyValue('height'))
