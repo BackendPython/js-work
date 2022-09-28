@@ -238,15 +238,15 @@ let check2 = setInterval(() => {
         }
         if (survival==true&&recover_time==false) {
             if (rival_details.heal==0&&player_details.heal>0) {
-                rivalStatus = 'none';
                 recover_time = true;
-                rival.style.display = 'none';
-                rival.style.left = '80% !important';
                 kills_text.textContent = parseInt(kills_text.textContent) + 1;
+                rival.remove()
                 setTimeout(() => {
-                    recover_time = false;
-                    rivalStatus = 'idle-2';
+                    let new_rival = document.createElement('div')
+                    new_rival.setAttribute('class', 'rival')
+                    fullBox.appendChild(new_rival)
                     rival_details.heal = 100;
+                    recover_time = false;
                 }, 1000);
             }
         }
