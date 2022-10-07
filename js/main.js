@@ -39,7 +39,7 @@ function openFull(){
 // details
 let player_details = {
     heal: 100,
-    attack: 50,
+    attack: 20,
     winner: false,
     blow_turn: false,
 }
