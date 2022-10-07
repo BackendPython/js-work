@@ -40,12 +40,14 @@ function openFull(){
 let player_details = {
     heal: 100,
     attack: 20,
+    jump: false,
     winner: false,
     blow_turn: false,
 }
 let rival_details = {
     heal: 100,
     attack: 10,
+    jump: false,
     winner: false,
     blow_turn: false,
 }
