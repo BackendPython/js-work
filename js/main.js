@@ -99,8 +99,16 @@ function rotateTime(){
 }
 
 function player_jump() {
-    let player_bottom = parseInt(character.style.bottom) + 10
-    character.style.bottom = `${player_bottom}px`
+    // let player_bottom = parseInt(character.style.bottom) + 10
+    player_details.jump = true;
+    character.style.bottom = '5%';
+    
+    setTimeout(() => {
+        character.style.bottom = '';
+        setTimeout(() => {
+            player_details.jump = false;
+        }, 300);
+    }, 700);
 }
 
 function rival_jump() {
@@ -211,9 +219,8 @@ window.addEventListener('keyup', function(event){
                 }
                 break;
             case "w":
-                characterStatus = ''
-                if () {
-                    character.style.left = characterLeft + 100 + 'px'
+                if (player_details.jump==false) {
+                    player_jump()
                 }
                 break;
             case " ":
