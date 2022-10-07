@@ -98,6 +98,18 @@ function rotateTime(){
     fullBox.style.backgroundImage = 'none'
 }
 
+function player_jump() {
+    let player_bottom = parseInt(character.style.bottom) + 10
+    character.style.bottom = `${player_bottom}px`
+}
+
+function rival_jump() {
+    rival.forEach(function(rival){
+        let rival_bottom = parseInt(rival.style.bottom) + 10
+        rival.style.bottom = `${rival_bottom}px`
+    })
+}
+
 function rival_win(){
     selectPlayer = null;
     rival_details.winner = false;
@@ -195,6 +207,12 @@ window.addEventListener('keyup', function(event){
             case "d":
                 characterStatus = 'walk'
                 if (characterRight>100) {
+                    character.style.left = characterLeft + 100 + 'px'
+                }
+                break;
+            case "w":
+                characterStatus = ''
+                if () {
                     character.style.left = characterLeft + 100 + 'px'
                 }
                 break;
