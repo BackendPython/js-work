@@ -39,7 +39,7 @@ function openFull(){
 // details
 let player_details = {
     heal: 100,
-    attack: 20,
+    attack: 10,
     jump: false,
     winner: false,
     blow_turn: false,
@@ -113,8 +113,15 @@ function player_jump() {
 
 function rival_jump() {
     rival.forEach(function(rival){
-        let rival_bottom = parseInt(rival.style.bottom) + 10
-        rival.style.bottom = `${rival_bottom}px`
+    rival_details.jump = true;
+    rival.style.bottom = '5%';
+    
+    setTimeout(() => {
+        rival.style.bottom = '';
+        setTimeout(() => {
+            rival_details.jump = false;
+        }, 600);
+    }, 700);
     })
 }
 
@@ -329,6 +336,11 @@ window.addEventListener('keyup', function(event){
                 case "ArrowDown":
                     if (rivalStatus=='idle2') {
                         rivalStatus = 'attack2'
+                    }
+                    break;
+                case "ArrowUp":
+                    if (rival_details.jump==false) {
+                        rival_jump()
                     }
                     break;
                 default:
