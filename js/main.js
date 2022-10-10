@@ -234,7 +234,7 @@ window.addEventListener('keyup', function(event){
             case "d":
                 characterStatus = 'walk'
                 if (characterRight>100&&player_details.jump==false) {
-                    character.style.left = characterLeft + 100 + 'px'
+                    character.style.left = characterLeft + 100 + 'px'   
                 }
                 break;
             case "w":
