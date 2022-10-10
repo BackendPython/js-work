@@ -324,18 +324,18 @@ window.addEventListener('keyup', function(event){
             let rivalRight = parseInt(window.getComputedStyle(rival2).getPropertyValue('right'))
             switch (event.key) {
                 case "ArrowLeft":
-                    rivalStatus = 'walk2'
+                    rivalStatus = 'walk2';
                     if (rivalLeft>100) {
-                        rival2.style.left = rivalLeft - 100 + 'px'
+                        rival2.style.left = rivalLeft - 100 + 'px';
                     }
                     break;
                 case "ArrowRight":
-                    rivalStatus = 'walk2'
-                    rival2.style.left = rivalLeft + 100 + 'px'
+                    rivalStatus = 'walk2';
+                    rival2.style.left = rivalLeft + 100 + 'px';
                     break;
                 case "ArrowDown":
                     if (rivalStatus=='idle2') {
-                        rivalStatus = 'attack2'
+                        rivalStatus = 'attack2';
                     }
                     break;
                 case "ArrowUp":
