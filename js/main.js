@@ -63,7 +63,8 @@ function remove_fireball() {
 }
 
 function reload_game() {
-    gameStart = false
+    remove_fireball()
+    gameStart = false;
     rival_details.heal = 100;
     player_details.heal = 100;
     rival[0].style.left = null;
@@ -80,21 +81,23 @@ function reload_game() {
 }
 
 function battleTime(){
-    heals.style.display = 'flex'
-    rival[0].style.display = 'flex'
-    character.style.display = 'flex'
-    selectPage.style.display = 'none'
-    rotateImage.style.display = 'none'
-    fullBox.style.backgroundImage = 'url("/images/background.png")'
+    remove_fireball()
+    heals.style.display = 'flex';
+    rival[0].style.display = 'flex';
+    character.style.display = 'flex';
+    selectPage.style.display = 'none';
+    rotateImage.style.display = 'none';
+    fullBox.style.backgroundImage = 'url("/images/background.png")';
 }
 
 function startTime(){
-    heals.style.display = 'none'
-    rival[0].style.display = 'none'
-    character.style.display = 'none'
-    selectPage.style.display = 'grid'
-    rotateImage.style.display = 'none'
-    fullBox.style.backgroundImage = 'url("/images/select-background.png")'
+    remove_fireball()
+    heals.style.display = 'none';
+    rival[0].style.display = 'none';
+    character.style.display = 'none';
+    selectPage.style.display = 'grid';
+    rotateImage.style.display = 'none';
+    fullBox.style.backgroundImage = 'url("/images/select-background.png")';
 }
 
 function rotateTime(){
