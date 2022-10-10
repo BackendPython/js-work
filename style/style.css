@@ -29,7 +29,7 @@ body{
     left: 2%;
     width: 10%;
     height: 20%;
-    bottom: 0%;
+    bottom: -0.5%;
     display: none;
     position: absolute;
     transition: 1s ease;

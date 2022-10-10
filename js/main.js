@@ -107,7 +107,7 @@ function player_jump() {
         character.style.bottom = '';
         setTimeout(() => {
             player_details.jump = false;
-        }, 300);
+        }, 600);
     }, 700);
 }
 
