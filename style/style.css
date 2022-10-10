@@ -84,7 +84,7 @@ body{
 }
 .fireball{
   width: 15%;
-  height: 7%;
+  height: 7%;   
   position: absolute;
   background-image: url('/images/icons/fireball.png');
 }

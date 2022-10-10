@@ -227,13 +227,13 @@ window.addEventListener('keyup', function(event){
         switch (event.key) {
             case "a":
                 characterStatus = 'walk'
-                if (characterLeft>100) {
+                if (characterLeft>100&&player_details.jump==false) {
                     character.style.left = characterLeft - 100 + 'px'
                 }
                 break;
             case "d":
                 characterStatus = 'walk'
-                if (characterRight>100) {
+                if (characterRight>100&&player_details.jump==false) {
                     character.style.left = characterLeft + 100 + 'px'
                 }
                 break;
