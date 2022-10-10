@@ -54,6 +54,14 @@ let rival_details = {
 }
 
 // functions
+
+function remove_fireball() {
+    fireball = document.querySelectorAll('.fireball')
+    fireball.forEach(function(fireball){
+        fireball.remove()
+    })
+}
+
 function reload_game() {
     gameStart = false
     rival_details.heal = 100;
