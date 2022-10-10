@@ -325,13 +325,15 @@ window.addEventListener('keyup', function(event){
             switch (event.key) {
                 case "ArrowLeft":
                     rivalStatus = 'walk2';
-                    if (rivalLeft>100) {
+                    if (rivalLeft>100&&rival_details.jump==false) {
                         rival2.style.left = rivalLeft - 100 + 'px';
                     }
                     break;
                 case "ArrowRight":
-                    rivalStatus = 'walk2';
-                    rival2.style.left = rivalLeft + 100 + 'px';
+                    if (rival_details.jump==false) {
+                        rivalStatus = 'walk2';
+                        rival2.style.left = rivalLeft + 100 + 'px';
+                    }
                     break;
                 case "ArrowDown":
                     if (rivalStatus=='idle2') {
